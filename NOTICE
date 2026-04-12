@@ -1,0 +1,85 @@
+AION — Algebraic Interval Ontology for Clinical Networks
+========================================================
+
+Copyright © Friedhelm Matten, ISCaD GmbH, 30900 Wedemark, Germany.
+All rights reserved.
+
+This software is the original work of Friedhelm Matten and is the
+sole intellectual property of ISCaD GmbH, 30900 Wedemark, Germany.
+
+Formal foundation
+-----------------
+AION implements the mathematical model described in:
+
+  Matten, F. (2025). AION — Algebraic Interval Ontology for Clinical
+  Networks (FM-3, Version 1.0). ISCaD GmbH, 30900 Wedemark.
+  https://codeberg.org/fm2-project/cairn
+
+AION is the third paper in the FM series:
+
+  FM-1: Grundlagen zur wissenschaftlichen Auswertung von klinischen
+        Informationen (2020). ISCaD GmbH.
+
+  FM-2: CAIRN — Clinical Interoperability Reference Architecture.
+        ISCaD GmbH. https://codeberg.org/fm2-project/cairn
+
+  FM-3: AION — Algebraic Interval Ontology for Clinical Networks
+        (this software). ISCaD GmbH.
+
+Open-source licence
+-------------------
+AION is free software licensed under the European Union Public
+Licence 1.2 (EUPL-1.2).
+
+You may use, copy, modify, and distribute this software under the
+terms of the EUPL-1.2. The full licence text is available in the
+file LICENSE in this repository, and at:
+
+  https://eupl.eu/1.2/en/
+
+Commercial licence
+------------------
+A commercial licence is available for use cases that are not
+compatible with the copyleft obligations of EUPL-1.2, including
+embedding AION in proprietary or closed-source software, OEM
+redistribution, and regulated medical device software.
+
+For commercial licensing enquiries:
+
+  ISCaD GmbH
+  30900 Wedemark
+  Germany
+  licensing@iscad-it.de
+
+Terms and tier descriptions are available in LICENSE-COMMERCIAL.md.
+
+Scope limitation
+----------------
+AION is NOT a medical device within the meaning of EU MDR 2017/745
+or MPDG. It is a software library for formal modelling, verification,
+and analysis of clinical information structures. It does not make
+clinical decisions, does not interact with patients, and is not
+intended for direct clinical use.
+
+Third-party components
+----------------------
+AION depends on the following third-party libraries, each governed
+by its own licence:
+
+  networkx      — BSD 3-Clause
+  z3-solver     — MIT
+  pydantic      — MIT
+  portion       — LGPL-3.0
+  fhir.resources — Apache 2.0
+  hl7           — BSD 2-Clause
+  hypothesis    — MPL-2.0
+  sqlalchemy    — MIT
+  fastapi       — MIT
+  click         — BSD 3-Clause
+  shap          — MIT
+  xgboost       — Apache 2.0
+  diffprivlib   — MIT (IBM)
+  dowhy         — MIT
+  pendulum      — MIT
+
+None of these dependencies impose copyleft obligations on AION itself.
