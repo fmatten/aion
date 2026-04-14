@@ -1,0 +1,82 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name        = "aion"
+version     = "1.0.0"
+description = "AION — Algebraic Interval Ontology for Clinical Networks. Formal mathematical model for clinical information systems."
+readme      = "README.md"
+license     = {text = "EUPL-1.2"}
+requires-python = ">=3.10"
+keywords    = [
+    "FHIR", "HL7", "clinical-informatics", "formal-methods",
+    "Allen-algebra", "temporal-logic", "differential-privacy",
+    "causal-inference", "openEHR", "health-informatics"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+authors = [{name = "Friedhelm Matten", email = "licensing@iscad-it.de"}]
+
+dependencies = [
+    "networkx>=3.0",
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+fhir     = ["fhir.resources>=7.0"]
+db       = ["sqlalchemy>=2.0", "alembic>=1.13"]
+api      = ["fastapi>=0.110", "uvicorn[standard]>=0.28"]
+nlp      = ["sentence-transformers>=2.2"]
+causal   = ["pgmpy>=0.1.25"]
+formal   = ["z3-solver>=4.12"]
+reports  = ["pandas>=2.0", "openpyxl>=3.1", "jinja2>=3.1"]
+all      = [
+    "fhir.resources>=7.0",
+    "sqlalchemy>=2.0", "alembic>=1.13",
+    "fastapi>=0.110", "uvicorn[standard]>=0.28",
+    "pandas>=2.0", "openpyxl>=3.1", "jinja2>=3.1",
+    "z3-solver>=4.12",
+]
+dev      = [
+    "pytest>=8.0", "pytest-asyncio>=0.23", "hypothesis>=6.0",
+    "coverage>=7.0", "pytest-cov>=5.0",
+    "ruff>=0.4", "black>=24.0",
+    "networkx>=3.0", "pydantic>=2.0",
+]
+
+[project.urls]
+Homepage      = "https://codeberg.org/fm2-project/aion"
+Repository    = "https://codeberg.org/fm2-project/aion"
+Documentation = "https://codeberg.org/fm2-project/aion/wiki"
+"Bug Tracker" = "https://codeberg.org/fm2-project/aion/issues"
+Changelog     = "https://codeberg.org/fm2-project/aion/src/branch/main/CHANGELOG.md"
+
+[tool.pytest.ini_options]
+testpaths    = ["aion/tests"]
+python_files = ["test_*.py"]
+addopts      = "--tb=short -q"
+
+[tool.ruff]
+target-version = "py310"
+line-length    = 100
+
+[tool.black]
+line-length    = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.coverage.run]
+source = ["aion"]
+omit   = ["aion/tests/*"]
