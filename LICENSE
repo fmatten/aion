@@ -1,0 +1,62 @@
+OPEN-SOURCE-LIZENZ FÜR DIE EUROPÄISCHE UNION v. 1.2
+
+EUPL © Europäische Union 2007, 2016
+
+Diese Open-Source-Lizenz für die Europäische Union ("EUPL") gilt für Werke
+(im Sinne der nachfolgenden Begriffsbestimmung), die unter EUPL-Bedingungen
+zur Verfügung gestellt werden.
+
+Das Werk darf nur in der durch diese Lizenz gestatteten Form genutzt werden
+(insoweit eine solche Nutzung dem Urheber vorbehalten ist).
+
+Das Werk wird unter den Bedingungen dieser Lizenz zur Verfügung gestellt,
+wenn der Lizenzgeber den folgenden Hinweis unmittelbar hinter dem
+Urheberrechtshinweis dieses Werks anbringt:
+
+    Lizenziert unter der EUPL
+
+oder in einer anderen Form zum Ausdruck bringt, dass er es unter der EUPL
+lizenzieren möchte.
+
+Den vollständigen Text der EUPL v1.2 in allen 23 Amtssprachen der EU finden
+Sie unter:
+    https://joinup.ec.europa.eu/collection/eupl
+    https://eur-lex.europa.eu/eli/dec_impl/2017/863/oj
+
+Die SPDX-Standardfassung in Englisch finden Sie unter:
+    LICENSES/EUPL-1.2.txt
+    https://spdx.org/licenses/EUPL-1.2.html
+
+
+KOMPATIBLE LIZENZEN nach Artikel 5 der EUPL sind:
+
+  - GNU General Public License (GPL) v. 2, v. 3
+  - GNU Affero General Public License (AGPL) v. 3
+  - Open Software License (OSL) v. 2.1, v. 3.0
+  - Eclipse Public License (EPL) v. 1.0
+  - CeCILL v. 2.0, v. 2.1
+  - Mozilla Public Licence (MPL) v. 2
+  - GNU Lesser General Public Licence (LGPL) v. 2.1, v. 3
+  - Creative Commons Attribution-ShareAlike v. 3.0 Unported (CC BY-SA 3.0)
+    für andere Werke als Software
+  - European Union Public Licence (EUPL) v. 1.1, v. 1.2
+  - Québec Free and Open-Source Licence — Reciprocity (LiLiQ-R) oder
+    Strong Reciprocity (LiLiQ-R+)
+
+
+HINWEIS ZUR DUAL-LIZENZIERUNG
+
+AION Clinical wird in Dual-Lizenz angeboten:
+
+  1. Open-Source unter EUPL-1.2 (siehe diese Datei und LICENSES/EUPL-1.2.txt)
+  2. Kommerzielle Lizenz für proprietäre Verwendung, abweichende Bedingungen
+     oder Support-Verträge
+
+Für Informationen zur kommerziellen Lizenz wenden Sie sich an:
+
+    ISCaD GmbH
+    Friedhelm Matten
+    30900 Wedemark, Germany
+    licensing@iscad-it.de
+
+Siehe auch NOTICE für Urheberrechtshinweise und weitere Details.
