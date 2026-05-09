@@ -1,0 +1,54 @@
+# icu_extension.yaml — ICU-spezifische Erweiterung der Basis-Hierarchie
+# Vor dem Laden sollte clinical_base.yaml geladen werden.
+
+types:
+  - name: Beatmung
+    parent: Prozedur
+    description: "Mechanische Beatmung"
+    attributes:
+      mode:           { type: enum, values: [SIMV, BIPAP, CPAP, ASB, IPPV, NIV] }
+      peep:           { type: float, unit: "cmH2O", range: [0, 30] }
+      fio2:           { type: float, range: [0.21, 1.0] }
+      tidal_volume:   { type: float, unit: ml, range: [0, 1500] }
+
+  - name: ZVK_Anlage
+    parent: Prozedur
+    description: "Anlage eines zentralen Venenkatheters"
+    attributes:
+      site: { type: enum, values: [v_subclavia, v_jugularis, v_femoralis] }
+
+  - name: Dialyse
+    parent: Prozedur
+    description: "Nierenersatztherapie"
+    attributes:
+      method: { type: enum, values: [iHD, CVVHDF, CVVH, SLED] }
+
+  - name: Noradrenalin
+    parent: Vasopressor
+    attributes:
+      rate_mcg_kg_min: { type: float, range: [0, 5] }
+
+  - name: Propofol
+    parent: Medikation
+    description: "Sedierung"
+    attributes:
+      rate_mg_kg_h: { type: float, range: [0, 10] }
+
+  - name: SOFA_Score
+    parent: Beobachtung
+    description: "Sequential Organ Failure Assessment"
+    attributes:
+      respiratory:    { type: int, range: [0, 4] }
+      coagulation:    { type: int, range: [0, 4] }
+      liver:          { type: int, range: [0, 4] }
+      cardiovascular: { type: int, range: [0, 4] }
+      cns:            { type: int, range: [0, 4] }
+      renal:          { type: int, range: [0, 4] }
+      total:          { type: int, range: [0, 24], required: true }
+
+  - name: ARDS
+    parent: Diagnose
+    description: "Acute Respiratory Distress Syndrome (Berlin-Definition)"
+    attributes:
+      severity:    { type: enum, values: [mild, moderate, severe] }
+      pf_ratio:    { type: float, range: [0, 600] }

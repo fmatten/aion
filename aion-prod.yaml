@@ -1,0 +1,69 @@
+# AION Clinical — Beispiel-Konfigurationsdatei für Production
+#
+# Aktuell wird diese Datei noch nicht direkt vom Code gelesen — sie
+# dokumentiert die geplanten Production-Settings.
+#
+# Sobald `aion.config`-Modul existiert (geplant für 1.6.0), wird sie
+# via AION_CONFIG_FILE Umgebungsvariable geladen.
+
+# ─── Persistenz ─────────────────────────────────────────────────
+storage:
+  # Pfad zur Haupt-DB. Bei PostgreSQL: postgresql://user:pass@host/db
+  database: /var/lib/aion/aion.db
+
+  # Audit-Log getrennt, damit Backup/Export unabhängig
+  audit: /var/lib/aion/audit/audit.db
+
+  # WAL für SQLite — bei NFS abschalten
+  wal: true
+
+# ─── Datenschutz ────────────────────────────────────────────────
+privacy:
+  # Pseudonymisierungs-Salt: in Production aus einem Secret-Store
+  # holen, NICHT hier hardcodieren.
+  salt: "${AION_PRIVACY_SALT}"
+
+  # Wie lange werden Audit-Einträge aufbewahrt? (Tage)
+  # DSGVO-Aufbewahrungsfrist je nach Klinik 6 Monate bis 30 Jahre.
+  audit_retention_days: 3650
+
+# ─── Logging ────────────────────────────────────────────────────
+logging:
+  level: INFO
+  format: json   # für ELK/Loki
+  file: /var/log/aion/aion.log
+  rotate_max_mb: 100
+  rotate_keep: 7
+
+# ─── Authentifizierung (Stub) ───────────────────────────────────
+auth:
+  # Geplant für 1.6.0:
+  # backend: ldap | oidc | none
+  # Aktuell: keine Auth, nur lokaler Zugriff
+  backend: none
+
+  # Bei LDAP:
+  # ldap:
+  #   server: ldaps://ldap.klinik.de
+  #   base_dn: ou=people,dc=klinik,dc=de
+
+  # Bei OIDC (z. B. Keycloak):
+  # oidc:
+  #   issuer: https://auth.klinik.de/realms/aion
+  #   client_id: aion-clinical
+
+# ─── Performance ────────────────────────────────────────────────
+performance:
+  # Maximaler Pattern-Mining-Suchraum (siehe TCFG.mine_patterns)
+  max_pattern_length: 6
+  # Pool-Größe für DB-Verbindungen (PostgreSQL)
+  db_pool_size: 10
+
+# ─── Klinische Validierung ──────────────────────────────────────
+validation:
+  # Plausibilitätsprüfungen aktivieren (geplant für 1.6.0)
+  enable_value_ranges: false
+  ranges_file: /etc/aion/value_ranges.yaml
+
+  # Eigenes Code-Mapping für Synthea/FHIR-Import
+  code_map_file: /etc/aion/code_mappings.yaml

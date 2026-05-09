@@ -1,0 +1,50 @@
+# docker-compose.yml — AION Clinical Production-Setup
+#
+# Verwendung:
+#   docker compose up -d           # Starten im Hintergrund
+#   docker compose logs -f         # Logs verfolgen
+#   docker compose exec aion aion stats /var/lib/aion/aion.db
+#   docker compose down            # Stoppen
+#
+# Persistenz: data-Volume bleibt über Container-Restarts erhalten.
+# Audit: separat gemountet, kann unabhängig gesichert/exportiert werden.
+
+services:
+  aion:
+    image: aion-clinical:1.5.0
+    container_name: aion-clinical
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      AION_LOG_LEVEL: INFO
+      AION_DB_PATH: /var/lib/aion/aion.db
+      AION_AUDIT_PATH: /var/lib/aion/audit/audit.db
+      TZ: Europe/Berlin
+    volumes:
+      - aion-data:/var/lib/aion
+      - aion-audit:/var/lib/aion/audit
+    # Default-Befehl: zeigt Hilfe. Real-Setup würde hier den Service-Modus
+    # starten — sobald aion-api als Long-Running-Service existiert.
+    command: ["--version"]
+    restart: unless-stopped
+    # Sicherheits-Härtung
+    read_only: true
+    tmpfs:
+      - /tmp:size=64M
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    # Resource-Limits (anpassen je nach Datenmenge)
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1.0"
+
+volumes:
+  aion-data:
+    driver: local
+  aion-audit:
+    driver: local

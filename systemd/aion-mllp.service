@@ -1,0 +1,82 @@
+# SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+# SPDX-License-Identifier: EUPL-1.2
+#
+# systemd-Service-Datei für AION MLLP-Listener
+#
+# Nach /etc/systemd/system/aion-mllp.service kopieren, dann:
+#
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now aion-mllp.service
+#   sudo systemctl status aion-mllp.service
+#   journalctl -u aion-mllp.service -f
+#
+# Voraussetzungen:
+#   * AION 1.9.0+ unter /opt/aion-stack/aion mit venv installiert
+#   * Verzeichnisse /var/lib/aion-stack/aion-data existieren mit owner aion-admin
+#   * /etc/aion/aion.yaml und /etc/aion/secrets.env angelegt (siehe
+#     04-aion-deployment.md aus dem Installations-Paket)
+
+[Unit]
+Description=AION Clinical — MLLP-Listener für HL7-v2 (Port 2575)
+Documentation=https://github.com/<your-org>/aion-clinical
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=aion-admin
+Group=aion-admin
+WorkingDirectory=/opt/aion-stack/aion
+
+# Konfiguration und Secrets
+EnvironmentFile=/etc/aion/secrets.env
+Environment=AION_CONFIG_FILE=/etc/aion/aion.yaml
+
+# Hauptkommando
+ExecStart=/opt/aion-stack/aion/venv/bin/aion mllp-listen \
+    --host 0.0.0.0 \
+    --port 2575 \
+    --db /var/lib/aion-stack/aion-data/aion.db \
+    --audit /var/lib/aion-stack/aion-data/audit.db \
+    --auth-keys /etc/aion/api-keys.yaml \
+    --auth-role ingest
+
+# Bei Fehler: nach 10s neu starten, max 5x in 60s
+Restart=on-failure
+RestartSec=10
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+# Graceful Shutdown via SIGTERM (Default)
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# ─── Sicherheits-Härtung ────────────────────────────────────────
+# Privilegien minimieren
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/var/lib/aion-stack /var/log/aion-stack
+
+# Keine Erweiterung von Capabilities
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+# Prozess-Isolation
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictRealtime=yes
+RestrictNamespaces=yes
+LockPersonality=yes
+
+# Netzwerk: nur IPv4/IPv6, kein Unix-Domain-Socket-Mass
+RestrictAddressFamilies=AF_INET AF_INET6
+
+# Resource-Limits
+LimitNOFILE=4096
+MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

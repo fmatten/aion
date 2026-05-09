@@ -1,0 +1,97 @@
+# clinical_base.yaml — Basis-Typhierarchie für klinische Ereignisse
+# Kompatibel mit aion.core.types.TypeHierarchy.from_yaml(...)
+
+types:
+  # ── Top-Level-Kategorien (parent: null ⇒ Kind von ⊤) ────────────
+  - name: Diagnose
+    fhir: Condition
+    description: "Klinische Diagnose nach ICD-10/SNOMED-CT"
+    attributes:
+      code:      { type: string, required: true, description: "ICD-10 oder SNOMED-CT Code" }
+      severity:  { type: enum, values: [mild, moderate, severe] }
+      certainty: { type: enum, values: [confirmed, suspected, ruled_out] }
+
+  - name: Beobachtung
+    fhir: Observation
+    description: "Messung, Beobachtung oder Befund"
+    attributes:
+      code: { type: string, required: true }
+      unit: { type: string }
+
+  - name: Medikation
+    fhir: MedicationAdministration
+    description: "Medikamentengabe an Patient"
+    attributes:
+      atc_code: { type: string, required: true }
+      dose:     { type: float, range: [0, 100000] }
+      unit:     { type: string }
+      route:    { type: enum, values: [po, iv, im, sc, inhalativ, topisch] }
+
+  - name: Prozedur
+    fhir: Procedure
+    description: "Therapeutische oder diagnostische Maßnahme"
+    attributes:
+      code: { type: string, required: true }
+
+  # ── Diagnose-Subtypen ────────────────────────────────────────────
+  - name: Herzinfarkt
+    parent: Diagnose
+    description: "Akuter Myokardinfarkt"
+    attributes:
+      stemi:        { type: bool }
+      troponin_max: { type: float, unit: "ng/ml", range: [0, 1000] }
+      killip_class: { type: enum, values: ["I", "II", "III", "IV"] }
+
+  - name: Sepsis
+    parent: Diagnose
+    description: "Sepsis nach Sepsis-3-Definition"
+    attributes:
+      sofa_score: { type: int, range: [0, 24] }
+      lactate:    { type: float, unit: "mmol/l", range: [0, 30] }
+      septic_shock: { type: bool }
+
+  - name: Schlaganfall
+    parent: Diagnose
+    description: "Apoplex (ischämisch oder hämorrhagisch)"
+    attributes:
+      type:       { type: enum, values: [ischemic, hemorrhagic, undetermined] }
+      nihss:      { type: int, range: [0, 42] }
+      tpa_given:  { type: bool }
+
+  # ── Beobachtungs-Subtypen ────────────────────────────────────────
+  - name: Blutdruckmessung
+    parent: Beobachtung
+    fhir: Observation
+    attributes:
+      systolic:  { type: int, unit: mmHg, range: [40, 300], required: true }
+      diastolic: { type: int, unit: mmHg, range: [20, 200], required: true }
+      method:    { type: enum, values: [invasive, oscillometric, auskultatorisch] }
+
+  - name: Herzfrequenz
+    parent: Beobachtung
+    attributes:
+      value:  { type: int, unit: bpm, range: [0, 300], required: true }
+      rhythm: { type: enum, values: [sinus, afib, vt, vf, asystole, other] }
+
+  - name: Laktatmessung
+    parent: Beobachtung
+    attributes:
+      value: { type: float, unit: "mmol/l", range: [0, 30], required: true }
+
+  - name: Temperaturmessung
+    parent: Beobachtung
+    attributes:
+      value:    { type: float, unit: "°C", range: [25, 45], required: true }
+      location: { type: enum, values: [oral, rektal, axillär, tympanisch, vesikal] }
+
+  # ── Medikations-Subtypen ─────────────────────────────────────────
+  - name: Antibiotikum
+    parent: Medikation
+    description: "Antimikrobielle Therapie"
+    attributes:
+      generation: { type: string }
+
+  - name: Vasopressor
+    parent: Medikation
+    attributes:
+      target_map: { type: int, unit: mmHg, range: [50, 120] }

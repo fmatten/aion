@@ -1,0 +1,284 @@
+# cardiology_extension.yaml — Kardiologie-spezifische Typhierarchie
+#
+# Erweitert clinical_base.yaml um typische kardiologische Diagnosen,
+# Beobachtungen, Prozeduren und Medikationen. Vor dem Laden zuerst
+# clinical_base.yaml laden (Diagnose, Beobachtung, Prozedur,
+# Medikation als Top-Level-Typen werden vorausgesetzt).
+
+types:
+  # ── Akute Koronarsyndrome ──────────────────────────────────────
+  - name: AkutesKoronarsyndrom
+    parent: Diagnose
+    fhir: Condition
+    description: "Sammelbegriff für instabile Angina, NSTEMI, STEMI"
+    attributes:
+      onset_to_admission_min:
+        type: int
+        unit: min
+        range: [0, 1440]
+      grace_score:
+        type: int
+        range: [0, 372]
+        description: "GRACE-Risk-Score zur Mortalitätsprognose"
+
+  - name: STEMI
+    parent: AkutesKoronarsyndrom
+    description: "ST-Hebungsinfarkt — sofortige Reperfusionstherapie indiziert"
+    attributes:
+      lokalisation:
+        type: enum
+        values: [anterior, inferior, lateral, posterior, rechtsventrikulaer]
+        required: true
+      st_hebung_mm:
+        type: float
+        unit: mm
+        range: [0, 30]
+      door_to_balloon_min:
+        type: int
+        unit: min
+        range: [0, 720]
+        description: "Door-to-Balloon-Zeit (Qualitätsindikator, Ziel <90 min)"
+
+  - name: NSTEMI
+    parent: AkutesKoronarsyndrom
+    description: "Nicht-ST-Hebungsinfarkt — Troponin-Anstieg ohne ST-Hebung"
+    attributes:
+      troponin_max_ng_l:
+        type: float
+        unit: "ng/l"
+        range: [0, 100000]
+      timi_score:
+        type: int
+        range: [0, 7]
+
+  - name: InstabileAngina
+    parent: AkutesKoronarsyndrom
+    description: "Pectanginöse Beschwerden ohne Troponin-Anstieg"
+    attributes:
+      ccs_klasse:
+        type: enum
+        values: ["I", "II", "III", "IV"]
+        description: "Canadian Cardiovascular Society Klassifikation"
+
+  # ── Herzinsuffizienz ───────────────────────────────────────────
+  - name: Herzinsuffizienz
+    parent: Diagnose
+    fhir: Condition
+    attributes:
+      nyha_klasse:
+        type: enum
+        values: ["I", "II", "III", "IV"]
+        required: true
+      ef_prozent:
+        type: int
+        unit: "%"
+        range: [5, 75]
+        description: "linksventrikuläre Ejektionsfraktion"
+      typ:
+        type: enum
+        values: [HFrEF, HFmrEF, HFpEF]
+        description: "reduced/mildly-reduced/preserved Ejection Fraction"
+
+  # ── Rhythmusstörungen ──────────────────────────────────────────
+  - name: Vorhofflimmern
+    parent: Diagnose
+    fhir: Condition
+    attributes:
+      typ:
+        type: enum
+        values: [paroxysmal, persistierend, permanent]
+        required: true
+      cha2ds2_vasc:
+        type: int
+        range: [0, 9]
+        description: "Schlaganfall-Risiko-Score"
+      hasbled:
+        type: int
+        range: [0, 9]
+        description: "Blutungsrisiko-Score"
+
+  - name: VentrikulaereTachykardie
+    parent: Diagnose
+    description: "VT — anhaltend (>30s) oder nicht-anhaltend"
+    attributes:
+      anhaltend:
+        type: bool
+      monomorph:
+        type: bool
+
+  # ── Kardiologische Beobachtungen ───────────────────────────────
+  - name: EKG_Befund
+    parent: Beobachtung
+    fhir: Observation
+    attributes:
+      rhythmus:
+        type: enum
+        values: [sinus, afib, vt, vf, asystole, schrittmacher, andere]
+        required: true
+      hr_bpm:
+        type: int
+        unit: bpm
+        range: [0, 300]
+      qrs_ms:
+        type: int
+        unit: ms
+        range: [40, 250]
+      qt_ms:
+        type: int
+        unit: ms
+        range: [200, 700]
+
+  - name: Echokardiographie
+    parent: Beobachtung
+    fhir: Observation
+    description: "Transthorakale oder transösophageale Echokardiographie"
+    attributes:
+      modalitaet:
+        type: enum
+        values: [TTE, TEE]
+        required: true
+      ef_prozent:
+        type: int
+        unit: "%"
+        range: [5, 75]
+      lvedd_mm:
+        type: int
+        unit: mm
+        range: [25, 90]
+        description: "linksventrikulärer enddiastolischer Durchmesser"
+      perikarderguss:
+        type: bool
+
+  - name: Troponin
+    parent: Beobachtung
+    fhir: Observation
+    attributes:
+      value_ng_l:
+        type: float
+        unit: "ng/l"
+        range: [0, 100000]
+        required: true
+      assay:
+        type: enum
+        values: [hochsensitiv, konventionell]
+
+  - name: NT_proBNP
+    parent: Beobachtung
+    fhir: Observation
+    description: "N-terminales pro Brain Natriuretic Peptide"
+    attributes:
+      value_pg_ml:
+        type: float
+        unit: "pg/ml"
+        range: [0, 50000]
+        required: true
+
+  # ── Kardiologische Prozeduren ──────────────────────────────────
+  - name: Koronarangiographie
+    parent: Prozedur
+    fhir: Procedure
+    description: "Diagnostische Herzkatheteruntersuchung"
+    attributes:
+      zugang:
+        type: enum
+        values: [radial, femoral, brachial]
+        required: true
+      kontrastmittel_ml:
+        type: int
+        unit: ml
+        range: [0, 500]
+
+  - name: PCI
+    parent: Prozedur
+    fhir: Procedure
+    description: "Perkutane Koronarintervention (Ballon/Stent)"
+    attributes:
+      gefaess:
+        type: enum
+        values: [LAD, LCX, RCA, RIM, LM, mehrgefaess]
+        required: true
+      stent_typ:
+        type: enum
+        values: [DES, BMS, BVS, kein_stent]
+      stent_anzahl:
+        type: int
+        range: [0, 6]
+      tici_flow_post:
+        type: int
+        range: [0, 3]
+        description: "TIMI-Flow-Grad nach Intervention (3 = optimal)"
+
+  - name: Kardioversion
+    parent: Prozedur
+    fhir: Procedure
+    attributes:
+      modalitaet:
+        type: enum
+        values: [elektrisch, pharmakologisch]
+        required: true
+      energie_joule:
+        type: int
+        unit: J
+        range: [50, 360]
+      erfolgreich:
+        type: bool
+
+  - name: Schrittmacher_Implantation
+    parent: Prozedur
+    fhir: Procedure
+    attributes:
+      typ:
+        type: enum
+        values: [VVI, DDD, CRT_P, CRT_D, ICD]
+        required: true
+
+  # ── Kardiologische Medikation ──────────────────────────────────
+  - name: Antikoagulation
+    parent: Medikation
+    fhir: MedicationAdministration
+    attributes:
+      substanz:
+        type: enum
+        values: [heparin, enoxaparin, apixaban, rivaroxaban, dabigatran, edoxaban, phenprocoumon, warfarin]
+        required: true
+      indikation:
+        type: enum
+        values: [vhf, lae, tvt, klappenersatz, periinterventionell]
+
+  - name: Thrombozytenaggregationshemmer
+    parent: Medikation
+    fhir: MedicationAdministration
+    attributes:
+      substanz:
+        type: enum
+        values: [ass, clopidogrel, prasugrel, ticagrelor]
+        required: true
+      ladedosis:
+        type: bool
+        description: "Loading-Dose vs. Erhaltungsdosis"
+
+  - name: BetaBlocker
+    parent: Medikation
+    fhir: MedicationAdministration
+    attributes:
+      substanz:
+        type: enum
+        values: [metoprolol, bisoprolol, carvedilol, nebivolol]
+        required: true
+      target_hr_bpm:
+        type: int
+        unit: bpm
+        range: [40, 100]
+
+  - name: Statin
+    parent: Medikation
+    fhir: MedicationAdministration
+    attributes:
+      substanz:
+        type: enum
+        values: [atorvastatin, rosuvastatin, simvastatin, pravastatin]
+        required: true
+      dosis_mg:
+        type: int
+        unit: mg
+        range: [5, 80]

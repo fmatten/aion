@@ -1,0 +1,167 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [{"family": "Mustermann", "given": ["Max"]}],
+        "gender": "male",
+        "birthDate": "1965-03-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-001",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-001",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "period": {
+          "start": "2026-04-15T08:30:00Z",
+          "end": "2026-04-19T16:00:00Z"
+        },
+        "type": [{
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "50849002",
+            "display": "Emergency room admission"
+          }]
+        }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-temp-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-temp-001",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "8310-5",
+            "display": "Body temperature"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "effectiveDateTime": "2026-04-15T08:45:00Z",
+        "valueQuantity": {
+          "value": 39.2,
+          "unit": "Cel",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-hr-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-hr-001",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "8867-4",
+            "display": "Heart rate"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "effectiveDateTime": "2026-04-15T08:46:00Z",
+        "valueQuantity": {
+          "value": 118,
+          "unit": "/min",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:obs-glu-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-glu-001",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "2345-7",
+            "display": "Glucose"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "effectiveDateTime": "2026-04-15T09:00:00Z",
+        "valueQuantity": {"value": 142, "unit": "mg/dL"}
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cond-001",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-001",
+        "clinicalStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }]
+        },
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "91302008",
+            "display": "Sepsis (disorder)"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "onsetDateTime": "2026-04-15T10:30:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:proc-001",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-001",
+        "status": "completed",
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "33195004",
+            "display": "Intensive care monitoring"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "performedDateTime": "2026-04-15T11:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medreq-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medreq-001",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [{
+            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "code": "1656976",
+            "display": "Piperacillin-tazobactam"
+          }]
+        },
+        "subject": {"reference": "urn:uuid:patient-001"},
+        "encounter": {"reference": "urn:uuid:encounter-001"},
+        "authoredOn": "2026-04-15T11:15:00Z"
+      }
+    }
+  ]
+}
