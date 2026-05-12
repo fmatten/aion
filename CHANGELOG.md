@@ -7,6 +7,56 @@ Versionierung folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [2.0.1] — 2026-05-12
+
+**Major Release** — Vollständige Implementierung des Papers FM-3
+(*Formale Wissensrepräsentation klinischer Verläufe*,
+DOI: 10.5281/zenodo.19548857) durch additive Erweiterung von 1.10.3.
+
+### Wichtig: vollständig abwärtskompatibel
+
+Diese Veröffentlichung ist **rein additiv** — alle Module aus 1.10.3
+sind unverändert enthalten. Bestehende Imports funktionieren weiter:
+`aion.core.*`, `aion.fhir.*`, `aion.hl7v2.*`, `aion.auth.*`,
+`aion.persistence.*`, `aion.gui.*`, `aion.verify.*`, `aion.cli`,
+`aion.examples.*`.
+
+### Hinzugefügt: Paper FM-3 §3–§22
+
+**Kernmodule (stdlib-only, keine neuen Pflichtabhängigkeiten):**
+
+- **`aion.privacy.dp`** — §20 Differential Privacy (`LocalDP`, `LaplaceDP`, `PrivacyBudget`)
+- **`aion.causal_learn.pc_algorithm`** — §15 PC-Algorithmus + Bootstrap (zusätzlich zu `aion.core.causal`)
+- **`aion.explain.shapley`** — §22 Shapley-Attribution, kontrafaktische Erklärung, suffiziente Erklärung, **§22.5 `bounded_explanation`** (|S| ≤ K_max)
+- **`aion.ai.components`** — §21 KI-Komponenten (7 Schichten: Extraktion, Validierung, Anomalie, Risiko, Regeln, Komposition)
+- **`aion.ai.trajectories`** — §21.5 Episoden + N-Gramm-Trajektorienvorhersage
+- **`aion.query.language`** — §11 Formale Abfragesprache (Kohortenformeln, Algebra)
+- **`aion.federation.federated`** — §20.7 Lokale Multi-Institutionen-Föderierung
+- **`aion.federation.remote`** — §20.7 HTTPS-basierte Multi-Institutionen-Föderierung
+- **`aion.schema_evolution`** — §18 Schemaevolution (7 Operationen)
+- **`aion.schema_registry`** — §18.1 Versionierte Schema-Registry
+
+**Optionale Extras (neue):**
+
+- `pip install aion-clinical[api]` — REST-API mit FastAPI (57 Endpunkte)
+- `pip install aion-clinical[postgres]` — `aion.persist.postgres_store` mit DP-Erweiterungen
+- `pip install aion-clinical[mllp]` — HL7v2 MLLP-Listener mit 16 klinisch korrekten Nachrichtentypen
+- `pip install aion-clinical[oidc-keycloak]` — Keycloak-Auth (zusätzlich zur bestehenden `[oidc]`)
+- `pip install aion-clinical[monitoring]` — Prometheus-Metriken (16 Metriken)
+- `pip install aion-clinical[federation]` — Multi-Institutionen-API
+- `pip install aion-clinical[full]` — komplettes Produktionspaket
+
+### Hinweis zu yanked 2.0.0
+
+Eine vorzeitig veröffentlichte Version 2.0.0 wurde wegen unvollständiger
+Paketstruktur (fehlende 1.10.3-Module) zurückgezogen. Diese 2.0.1 ist die
+korrekte Veröffentlichung als vollständig abwärtskompatibler Major-Release.
+
+### Wissenschaftliche Verknüpfung
+
+Implementiert: Matten, F. (2026). *Formale Wissensrepräsentation klinischer
+Verläufe* (Paper FM-3). DOI: [10.5281/zenodo.19548857](https://doi.org/10.5281/zenodo.19548857)
+
 ## [1.10.3] — 2026-05-06
 
 Hygiene-Patch nach externem Smoke-Test (ChatGPT). Fokus: Wheel-Inhalt
