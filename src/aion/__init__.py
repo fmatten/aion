@@ -39,7 +39,7 @@ from aion.verify import (
     has_z3,
 )
 
-__version__ = "1.10.3"
+__version__ = "2.0.1"
 
 
 def has_fhir() -> bool:

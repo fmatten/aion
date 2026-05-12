@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "AION Clinical 2.0.1"
+message: "Bei wissenschaftlicher Nutzung bitte Paper FM-3 zitieren."
+type: software
+authors:
+  - given-names: Friedhelm
+    family-names: Matten
+    email: licensing@iscad-it.de
+    affiliation: "ISCaD GmbH"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19548857
+    description: "Theoretical foundation FM-3"
+repository-code: "https://codeberg.org/iscad/aion"
+url: "https://pypi.org/project/aion-clinical/"
+license: EUPL-1.2
+version: 2.0.1
+date-released: "2026-05-12"
+keywords:
+  - "clinical informatics"
+  - "HL7v2"
+  - "FHIR"
+  - "MLLP"
+  - "differential privacy"
+  - "causal inference"
+  - "AION"
