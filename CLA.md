@@ -1,100 +1,38 @@
-# AION Contributor License Agreement (CLA)
+# Contributor License Agreement Template
 
-**Project:** AION — Algebraic Interval Ontology for Clinical Networks
-**Maintainer:** Friedhelm Matten, ISCaD GmbH, 30900 Wedemark, Germany
-**Version:** 1.0 · April 2026
+This is a template for substantial contributions. It should be reviewed and adapted by legal counsel before use.
 
----
+## Contributor
 
-## Why a CLA?
+Name / entity: ____________________________________________
 
-AION is published under a dual licence model: EUPL-1.2 for open-source use,
-and a commercial licence for proprietary use (see `LICENSE-COMMERCIAL.md`).
+Address: _________________________________________________
 
-To maintain this model, ISCaD GmbH must hold the right to sublicence all
-contributions under both licences. This CLA grants ISCaD GmbH that right
-while you retain full ownership of your contribution.
+Email: ____________________________________________________
 
-**You do not transfer copyright.** You grant a licence.
+## Project
 
----
+AION Clinical
 
-## Agreement
+## Grant
 
-By submitting a pull request, patch, or any other contribution to the AION
-repository at `https://codeberg.org/fm2-project/cairn`, you agree to the
-following terms:
+The contributor grants Iscad GmbH and the project maintainers a worldwide, royalty-free, non-exclusive, perpetual and irrevocable license to use, reproduce, modify, prepare derivative works of, publicly display, publicly perform, sublicense and distribute the contribution as part of AION Clinical under:
 
-### 1. Definitions
+- the European Union Public Licence v. 1.2 (`EUPL-1.2`); and/or
+- a separate commercial license offered by Iscad GmbH.
 
-- **"Contribution"** means any original work of authorship, including any
-  modification or addition to AION, that you intentionally submit to the
-  project.
-- **"You"** means the individual or legal entity submitting the Contribution.
-- **"ISCaD GmbH"** means ISCaD GmbH, 30900 Wedemark, Germany, the maintainer
-  of AION.
+## Representations
 
-### 2. Grant of copyright licence
+The contributor represents that they have the legal right to grant this license and that, to the best of their knowledge, the contribution does not knowingly include confidential information, patient-identifying information, trade secrets or code under incompatible third-party license terms.
 
-You grant ISCaD GmbH a **perpetual, worldwide, non-exclusive, royalty-free,
-irrevocable copyright licence** to reproduce, prepare derivative works of,
-publicly display, publicly perform, sublicence, and distribute your
-Contribution and such derivative works under any licence, including but not
-limited to EUPL-1.2 and commercial licences.
+## Signature
 
-### 3. Grant of patent licence
+Contributor signature: ____________________________________
 
-You grant ISCaD GmbH a **perpetual, worldwide, non-exclusive, royalty-free,
-irrevocable patent licence** to make, have made, use, offer to sell, sell,
-import, and otherwise transfer your Contribution, where such licence applies
-only to those patent claims licensable by you that are necessarily infringed
-by your Contribution alone or by combination with AION.
+Name: _____________________________________________________
 
-### 4. You retain your rights
+Date: _____________________________________________________
 
-This CLA does not transfer ownership of your Contribution. You retain all
-copyright and other intellectual property rights in your Contribution. You
-may continue to use, copy, modify, and distribute your Contribution under
-any terms you choose, including making it available under EUPL-1.2 or any
-other licence.
+For entity contributors:
 
-### 5. Representations
-
-You represent that:
-
-- You are legally entitled to grant the above licences.
-- Your Contribution is your original creation, or you have sufficient rights
-  to grant the above licences.
-- Your Contribution does not, to your knowledge, violate any third-party
-  intellectual property rights.
-- If your employer has rights to intellectual property you create, you have
-  received permission to make this Contribution on behalf of your employer,
-  or your employer has waived such rights for this Contribution.
-
-### 6. No warranty
-
-Your Contribution is provided "as is", without warranty of any kind.
-
-### 7. Governing law
-
-This CLA is governed by the laws of the Federal Republic of Germany.
-
----
-
-## How to sign
-
-You do not need to sign a separate document. By submitting a pull request
-you confirm that you have read and agree to this CLA.
-
-Add the following line to your pull request description:
-
-```
-I have read and agree to the AION Contributor License Agreement.
-```
-
-For corporate contributions or contributions involving employer IP, please
-contact `licensing@iscad-it.de` before submitting.
-
----
-
-*ISCaD GmbH · 30900 Wedemark · Germany · licensing@iscad-it.de*
+Authorized representative title: ___________________________

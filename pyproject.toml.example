@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aion-clinical"
+version = "2.0.2"
+description = "Formal temporal and causal structure for consistent clinical data across systems."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "EUPL-1.2"
+license-files = [
+    "LICENSE.md",
+    "LICENSE-COMMERCIAL.md",
+    "NOTICE",
+    "LICENSES/EUPL-1.2.txt",
+]
+authors = [
+    { name = "Friedhelm Matten", email = "friedhelm.matten@iscad-it.de" },
+]
+maintainers = [
+    { name = "Iscad GmbH", email = "friedhelm.matten@iscad-it.de" },
+]
+keywords = [
+    "clinical data",
+    "FHIR",
+    "HL7",
+    "HL7v2",
+    "MLLP",
+    "interoperability",
+    "temporal semantics",
+    "causal structure",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Healthcare Industry",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://www.aion-clinical.eu"
+Source = "https://codeberg.org/iscad/aion-clinical"
+Issues = "https://codeberg.org/iscad/aion-clinical/issues"
+Documentation = "https://www.aion-clinical.eu"
+Commercial-Licensing = "https://www.aion-clinical.eu"
+
+# Uncomment and adapt if the package exposes a CLI.
+# [project.scripts]
+# aion-clinical = "aion_clinical.__main__:main"

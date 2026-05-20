@@ -1,90 +1,12 @@
 AION Clinical
-=============
 
-Copyright © 2026 Friedhelm Matten / ISCaD GmbH
-30900 Wedemark, Germany
-Contact: licensing@iscad-it.de
+Copyright (c) Iscad GmbH and contributors.
 
+AION Clinical is distributed under a dual-license model:
 
-DUAL LICENSE
-------------
+- European Union Public Licence v. 1.2 (EUPL-1.2); or
+- a separate commercial license from Iscad GmbH.
 
-AION Clinical is dual-licensed:
+Unless a separate written commercial license agreement has been concluded with Iscad GmbH, this software is provided under the EUPL-1.2.
 
-  1. **EUPL-1.2** (Open Source)
-     European Union Public Licence v1.2 — see LICENSE and
-     LICENSES/EUPL-1.2.txt for the full text in English. The German
-     version is embedded in LICENSE itself; further translations are
-     available at https://joinup.ec.europa.eu/collection/eupl
-
-  2. **Commercial Licence**
-     Available for proprietary use, alternative terms, support
-     contracts, indemnification, or other commercial arrangements.
-     Please contact licensing@iscad-it.de for terms.
-
-You may choose either licence for your use of AION Clinical, but not
-both simultaneously for the same usage.
-
-
-SPDX-Format
------------
-
-For automated tooling (REUSE, FOSSology, etc.) the project follows the
-SPDX standard. Source files carry SPDX-License-Identifier headers:
-
-    SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-    SPDX-License-Identifier: EUPL-1.2
-
-
-Third-Party Components
-----------------------
-
-AION Clinical is itself a work, but uses (does not redistribute) the
-following third-party components at runtime, each under their own
-licence:
-
-  Required (stdlib + minimal):
-    - Python Standard Library                      Python Software Foundation Licence
-    - PyYAML                                       MIT
-
-  Optional (only if installed via extras):
-    - PySide6           [gui]                      LGPL-3.0-or-later
-    - fhir.resources    [fhir]                     BSD-3-Clause
-    - z3-solver         [verify]                   MIT
-    - dowhy             [dowhy/causal]             MIT
-    - jupyter, ipython, matplotlib, networkx       BSD / various
-    - ldap3             [ldap]                     LGPL-3.0
-    - authlib, requests [oidc]                     BSD-3-Clause / Apache-2.0
-    - pytest, ruff, mypy [dev]                     MIT / various
-
-These are not redistributed with AION Clinical. They are pulled in via
-pip at install time. Their respective licences apply to their own code,
-not to AION Clinical.
-
-
-Trademark
----------
-
-"AION", "AION Clinical", and "ISCaD" are trademarks of Friedhelm Matten
-/ ISCaD GmbH. The EUPL-1.2 licence does not grant trademark rights;
-see Article 5 (Legal Protection) of the EUPL.
-
-
-Warranty Disclaimer
--------------------
-
-AION Clinical is **NOT a certified medical device** under the EU
-Medical Device Regulation (MDR 2017/745). It is provided as a research
-and decision-support tool. Use in clinical decision-making about
-specific patients requires either:
-
-  - MDR certification by the operator, or
-  - Use under explicit research-only conditions with appropriate
-    clinical supervision.
-
-The dual licence does not change this. Even under a commercial licence,
-the operator remains responsible for regulatory compliance in their
-jurisdiction.
-
-See LICENSE / LICENSES/EUPL-1.2.txt Article 7 (Disclaimer of Warranty)
-and Article 8 (Disclaimer of Liability) for the full disclaimer.
+This software is not a certified medical device under Regulation (EU) 2017/745 (MDR). It is provided as a research, informatics and interoperability tool. Any use in clinical, regulated or patient-care contexts requires appropriate validation, governance and regulatory assessment by the user.

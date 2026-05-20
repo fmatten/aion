@@ -1,103 +1,58 @@
-# AION — Algebraic Interval Ontology for Clinical Networks
+# AION Clinical
 
-**Formal model for clinical information systems.**
-Foundation Module FM-3. Dual-licensed: EUPL-1.2 / Commercial.
+Formal temporal and causal structure for consistent clinical data across systems, including HL7 v2, FHIR and MLLP contexts.
 
----
-
-## Repository Status
-
-This Codeberg repository contains the **initial concept commit** of AION
-from April 2026, comprising the foundation module (FM-3), the
-Contributor License Agreement, the dual-license declaration, and the
-file-header template.
-
-The **active software development has continued elsewhere.** The current
-release is published on PyPI; this repository serves as a historical
-anchor for the original concept and the dual-licensing setup.
-
-## Current Software — install from PyPI
-
-The actively maintained software is published on PyPI:
-
-```
-pip install aion-clinical
-```
-
-- **PyPI:** <https://pypi.org/project/aion-clinical/>
-- **Latest release:** 1.10.1 (May 2026)
-- **License badge:** EUPL-1.2
-
-The PyPI distribution includes:
-
-- Type hierarchy and Allen interval algebra
-- Temporal Conditional Frequency Graphs (TCFG) for pattern mining
-- FHIR R4 import/export
-- HL7 v2 file import
-- HL7 v2 MLLP live listener (real-time)
-- Pluggable authentication (API-Key, LDAP/AD, OIDC)
-- Append-only audit trail
-- SQLite storage (PostgreSQL backend planned)
-- Optional GUI (PySide6) and Jupyter integration
-- Optional causal inference via DoWhy
-
-For a complete release history and the full changelog, see the PyPI
-project page or the package's own `CHANGELOG.md`.
-
-## Theoretical Foundation
-
-The mathematical foundation of AION — type hierarchy semantics,
-Allen-algebra interval relations, TCFG semantics, and the causal
-inference framework — is documented as a separate scholarly artifact
-and archived on Zenodo with its own DOI:
-
-**DOI:** [10.5281/zenodo.19548857](https://doi.org/10.5281/zenodo.19548857)
-
-Please cite the Zenodo record when referring to the **theoretical model**.
-The software itself currently does not have a separate software-DOI;
-when citing a specific software version, the canonical reference is
-the PyPI release identifier (e.g. `aion-clinical 1.10.1`).
+This Codeberg repository is intended as the public source and/or historical anchor for the AION Clinical concept, licensing setup, contribution rules and release metadata.
 
 ## Licensing
 
-AION is offered under a **dual license**:
+AION Clinical is offered under a dual-license model:
 
-- **EUPL-1.2** (European Union Public Licence v1.2) for open-source use.
-  Full text: see `LICENSE` in the PyPI distribution and at
-  <https://joinup.ec.europa.eu/collection/eupl/>
-- **Commercial license** available for proprietary integration,
-  redistribution under non-EUPL terms, or settings where EUPL
-  obligations are not desired.
+- **Open Source:** European Union Public Licence v. 1.2 (EUPL-1.2)
+- **Commercial:** proprietary commercial licensing by **Iscad GmbH**
 
-For commercial licensing inquiries, please contact:
+You may use, modify and distribute the software under the EUPL-1.2. Alternatively, commercial licensing terms are available from Iscad GmbH for use cases such as proprietary integration, redistribution under non-EUPL terms, OEM embedding, warranty/support arrangements or other negotiated commercial conditions.
 
-> **ISCaD GmbH**
-> 30900 Wedemark, Germany
-> [licensing@iscad-it.de](mailto:licensing@iscad-it.de)
+See:
 
-The Contributor License Agreement (`CLA.md`) and the commercial
-license terms (`LICENSE-COMMERCIAL.md`) in this repository document
-the dual-licensing setup as established at project initiation.
+- `LICENSE.md`
+- `LICENSES/EUPL-1.2.txt`
+- `LICENSE-COMMERCIAL.md`
+- `NOTICE`
 
-## Disclaimer
+## Medical and regulatory status
 
-AION Clinical is **not a certified medical device** under the EU Medical
-Device Regulation (MDR 2017/745). It is provided as a research and
-informatics tool. Use in patient care requires appropriate clinical
-governance, validation, and — where applicable — separate regulatory
-certification.
+AION Clinical is provided as a research and clinical informatics software component. It is **not certified as a medical device under Regulation (EU) 2017/745 (MDR)** unless a specific certified distribution or deployment context explicitly states otherwise.
 
-See the `NOTICE` file for the full disclaimer.
+Use in clinical care, patient-facing workflows, diagnostic decision-making, therapy control or regulated operational environments requires appropriate governance, validation, risk management and, where applicable, separate certification.
+
+## Repository role
+
+This repository may be used to maintain:
+
+- source code and documentation,
+- licensing and dual-license setup,
+- contribution rules,
+- release notes,
+- PyPI packaging metadata,
+- public issue tracking.
+
+## Contribution policy
+
+External contributions are accepted only under the contribution terms in `CONTRIBUTING.md`. Contributors must confirm that their contributions may be distributed under the same dual-license model: EUPL-1.2 or commercial Iscad GmbH license.
+
+## SPDX header
+
+Recommended source file header:
+
+```text
+SPDX-FileCopyrightText: 2026 Iscad GmbH
+SPDX-License-Identifier: EUPL-1.2 OR LicenseRef-Iscad-Commercial
+```
 
 ## Contact
 
-| Topic | Contact |
-| --- | --- |
-| Commercial licensing, pilot inquiries, partnerships | <licensing@iscad-it.de> |
-| Bug reports, feature requests | via PyPI release notes (preferred) |
-| Theoretical / academic correspondence | <licensing@iscad-it.de> |
+Commercial licensing and governance questions:
 
----
-
-*Repository maintained by Friedhelm Matten / ISCaD GmbH.
-Last updated: May 2026.*
+**Iscad GmbH**  
+contact: `info@iscad-it.de`

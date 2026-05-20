@@ -1,55 +1,8 @@
-# MANIFEST.in — was zusätzlich zum Code in die sdist (.tar.gz) kommt.
-#
-# Wichtig: setuptools nimmt automatisch alles aus src/ + Test-Discovery, aber
-# Lizenz-Dateien, Changelog, NOTICE und Schemas müssen explizit benannt werden,
-# sonst fehlen sie in der hochgeladenen Distribution.
-
-# Lizenz und rechtliche Dokumente (PFLICHT)
-include LICENSE
-include NOTICE
-recursive-include LICENSES *.txt
-
-# Versions- und Projekt-Dokumentation
-include CHANGELOG.md
 include README.md
-include MIGRATION.md
-include BENUTZERHANDBUCH.md
-include SPRECHERTEXT.md
-
-# Schemas (laufzeit-relevant)
-recursive-include schemas *.yaml
-
-# systemd-Unit (Beispiel-Konfiguration für Anwender)
-recursive-include systemd *.service
-
-# Beispiele und Test-Fixtures
-recursive-include examples *.py *.ipynb
-recursive-include tests *.py
-recursive-include tests/fixtures *.json *.hl7 *.yaml
-
-# py.typed-Marker (PEP 561)
-include src/aion/py.typed
-
-# Werkzeuge (für Entwickler, die aus sdist arbeiten)
-recursive-include tools *.py
-
-# Container-Konfiguration
-include Dockerfile
-include docker-compose.yml
-include aion-prod.yaml
-include .dockerignore
-
-# Demo-Skript an der Wurzel
-include vorfuehrung.py
-
-# Was NICHT mitkommen soll
-global-exclude __pycache__
-global-exclude *.py[cod]
-global-exclude *.so
-global-exclude *.db
-global-exclude .DS_Store
-prune .pytest_cache
-prune build
-prune dist
-prune *.egg-info
-prune venv
+include LICENSE.md
+include LICENSE-COMMERCIAL.md
+include NOTICE
+include CONTRIBUTING.md
+include DCO.md
+include CLA.md
+recursive-include LICENSES *.txt
