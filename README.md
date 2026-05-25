@@ -1,8 +1,32 @@
 # AION Clinical
 
+**Algebraic Interval Ontology for Clinical Networks — FM-3 Referenzimplementierung**
+
 Formal temporal and causal structure for consistent clinical data across systems, including HL7 v2, FHIR and MLLP contexts.
 
-This Codeberg repository is intended as the public source and/or historical anchor for the AION Clinical concept, licensing setup, contribution rules and release metadata.
+[![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](https://github.com/fmatten/aion/releases)
+[![Licence: EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue.svg)](https://eupl.eu/1.2/en/)
+[![PyPI](https://img.shields.io/pypi/v/aion-clinical.svg)](https://pypi.org/project/aion-clinical/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19553130.svg)](https://doi.org/10.5281/zenodo.19553130)
+
+> GitHub: [fmatten/aion](https://github.com/fmatten/aion) · Codeberg: [iscad/aion](https://codeberg.org/iscad/aion) · PyPI: [aion-clinical](https://pypi.org/project/aion-clinical/)
+
+This repository is the public source for AION Clinical — licensing setup, contribution rules and release metadata.
+
+## Installation
+
+```bash
+pip install aion-clinical==2.0.1
+pip install aion-clinical[full]==2.0.1   # komplettes Produktionspaket
+```
+
+## Verwandte Projekte
+
+| Projekt | Beschreibung | Link |
+|---|---|---|
+| **CAIRN** | FM-2: Clinical Interoperability Reference Architecture | [github.com/fmatten/CAIRN](https://github.com/fmatten/CAIRN) |
+| **SILD** | FM-4: Signal-Loss Inspection at Data-boundaries | [github.com/fmatten/SILD](https://github.com/fmatten/SILD) |
+| **FM-3 Paper** | Formale Wissensrepräsentation klinischer Verläufe | [10.5281/zenodo.19553130](https://doi.org/10.5281/zenodo.19553130) |
 
 ## Licensing
 
