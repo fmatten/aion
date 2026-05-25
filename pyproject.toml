@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aion-clinical"
-version = "2.0.1"
-description = "Formal temporal and causal structure for consistent clinical data across systems (HL7 v2, FHIR, MLLP). v2.0.1 adds FM-3 sections §11/§15/§18/§20/§21/§22. EUPL-1.2 / commercial dual license."
+version = "2.0.2"
+description = "FM-3 formal knowledge representation for clinical trajectories — Allen algebra, causal inference, Shapley attribution, HL7 v2, FHIR R4, differential privacy. EUPL-1.2 / commercial dual license."
 readme = "README.md"
 license = "EUPL-1.2"
 requires-python = ">=3.10"
@@ -81,11 +81,13 @@ aion = "aion.cli:main"
 aion-gui = "aion.gui.app:main"
 
 [project.urls]
-"Source"                  = "https://codeberg.org/iscad/aion"
+"Homepage"                = "https://github.com/fmatten/aion"
+"Source"                  = "https://github.com/fmatten/aion"
+"Mirror"                  = "https://codeberg.org/iscad/aion"
 "PyPI"                    = "https://pypi.org/project/aion-clinical/"
-"Changelog"               = "https://pypi.org/project/aion-clinical/#history"
-"Theoretical Foundation"  = "https://doi.org/10.5281/zenodo.19548857"
-"Issues"                  = "https://codeberg.org/iscad/aion/issues"
+"Changelog"               = "https://github.com/fmatten/aion/blob/master/CHANGELOG.md"
+"Theoretical Foundation"  = "https://doi.org/10.5281/zenodo.19553130"
+"Issues"                  = "https://github.com/fmatten/aion/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]

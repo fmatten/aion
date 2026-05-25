@@ -7,6 +7,17 @@ Versionierung folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [2.0.2] — 2026-05-25
+
+### PyPI & Repository Metadata
+
+- Updated `description`: FM-3, Allen algebra, Shapley, differential privacy explizit benannt
+- Updated `[project.urls]`: GitHub als primäre URL, Codeberg als Mirror
+- README: Badges, GitHub-URL, verwandte Projekte (CAIRN, SILD)
+- Zenodo `related_identifiers` aktualisiert
+
+---
+
 ## [2.0.1] — 2026-05-12
 
 **Major Release** — Vollständige Implementierung des Papers FM-3
