@@ -26,7 +26,7 @@ pip install aion-clinical[full]==2.0.1   # komplettes Produktionspaket
 |---|---|---|
 | **FM-1** | Grundlagen zur wissenschaftlichen Auswertung klinischer Informationen | [10.5281/zenodo.19205557](https://doi.org/10.5281/zenodo.19205557) |
 | **CAIRN** | FM-2: Clinical Interoperability Reference Architecture | [github.com/fmatten/CAIRN](https://github.com/fmatten/CAIRN) |
-| **SILD** | FM-4: Signal-Loss Inspection at Data-boundaries | [github.com/fmatten/SILD](https://github.com/fmatten/SILD) |
+| **SILD** | FM-4: Signal-Loss Inspection at Data-boundaries | [github.com/fmatten/SILD](https://github.com/fmatten/SILD) · [10.5281/zenodo.20375435](https://doi.org/10.5281/zenodo.20375435) |
 | **FM-3 Paper** | Formale Wissensrepräsentation klinischer Verläufe | [10.5281/zenodo.19553130](https://doi.org/10.5281/zenodo.19553130) |
 
 ## Licensing
