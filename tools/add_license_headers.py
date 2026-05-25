@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """Fügt SPDX-Lizenz-Header in alle Source-Dateien ein.
 
 Idempotent: bereits vorhandene Header werden nicht dupliziert.
@@ -24,18 +24,18 @@ from typing import Optional
 
 HEADER_PYTHON = """\
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """
 
 HEADER_INI = """\
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 #
 """
 
 
 # Marker-String, an dem Header erkannt wird (idempotent)
-SPDX_MARKER = "SPDX-License-Identifier: EUPL-1.2"
+SPDX_MARKER = "SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial"
 
 
 # Welche Dateien werden gepatched (Glob-Pattern relativ zum Repo-Root)

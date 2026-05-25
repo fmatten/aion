@@ -1,5 +1,5 @@
 # aion/api/routes/mllp.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """MLLP-Status und Dead-Letter-Queue Management (§HL7v2)."""
 from __future__ import annotations
 from fastapi import APIRouter, Depends, Request, HTTPException

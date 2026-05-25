@@ -5,7 +5,7 @@
 Formal temporal and causal structure for consistent clinical data across systems, including HL7 v2, FHIR and MLLP contexts.
 
 [![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](https://github.com/fmatten/aion/releases)
-[![Licence: EUPL-1.2](https://img.shields.io/badge/Licence-EUPL--1.2-blue.svg)](https://eupl.eu/1.2/en/)
+[![Licence: AGPL-3.0](https://img.shields.io/badge/Licence-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) [![Licence: Commercial](https://img.shields.io/badge/Licence-Commercial-orange.svg)](mailto:licensing@iscad-it.de)
 [![PyPI](https://img.shields.io/pypi/v/aion-clinical.svg)](https://pypi.org/project/aion-clinical/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19553130.svg)](https://doi.org/10.5281/zenodo.19553130)
 
@@ -33,15 +33,15 @@ pip install aion-clinical[full]==2.0.1   # komplettes Produktionspaket
 
 AION Clinical is offered under a dual-license model:
 
-- **Open Source:** European Union Public Licence v. 1.2 (EUPL-1.2)
+- **Open Source:** European Union Public Licence v. 1.2 (AGPL-3.0)
 - **Commercial:** proprietary commercial licensing by **Iscad GmbH**
 
-You may use, modify and distribute the software under the EUPL-1.2. Alternatively, commercial licensing terms are available from Iscad GmbH for use cases such as proprietary integration, redistribution under non-EUPL terms, OEM embedding, warranty/support arrangements or other negotiated commercial conditions.
+You may use, modify and distribute the software under the AGPL-3.0. Alternatively, commercial licensing terms are available from Iscad GmbH for use cases such as proprietary integration, redistribution under non-EUPL terms, OEM embedding, warranty/support arrangements or other negotiated commercial conditions.
 
 See:
 
 - `LICENSE.md`
-- `LICENSES/EUPL-1.2.txt`
+- `LICENSES/AGPL-3.0.txt`
 - `LICENSE-COMMERCIAL.md`
 - `NOTICE`
 
@@ -64,7 +64,7 @@ This repository may be used to maintain:
 
 ## Contribution policy
 
-External contributions are accepted only under the contribution terms in `CONTRIBUTING.md`. Contributors must confirm that their contributions may be distributed under the same dual-license model: EUPL-1.2 or commercial Iscad GmbH license.
+External contributions are accepted only under the contribution terms in `CONTRIBUTING.md`. Contributors must confirm that their contributions may be distributed under the same dual-license model: AGPL-3.0 or commercial Iscad GmbH license.
 
 ## SPDX header
 
@@ -72,7 +72,7 @@ Recommended source file header:
 
 ```text
 SPDX-FileCopyrightText: 2026 Iscad GmbH
-SPDX-License-Identifier: EUPL-1.2 OR LicenseRef-Iscad-Commercial
+SPDX-License-Identifier: AGPL-3.0 OR LicenseRef-Iscad-Commercial
 ```
 
 ## Contact

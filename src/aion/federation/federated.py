@@ -1,5 +1,5 @@
 # aion/federation/federated.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH - EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """
 Foederiertes Modell mit Differential Privacy nach §20.1-20.7.
 

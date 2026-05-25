@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """Code-Mappings für HL7-v2-Import.
 
 DESIGNENTSCHEIDUNG (1.8.0, Lesart C analog Synthea):

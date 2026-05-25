@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """FHIR-System-URLs und Default-Code-Mappings.
 
 Hier werden Klinik-Codes (LOINC, SNOMED-CT, ICD-10) und die

@@ -1,5 +1,5 @@
 # aion/federation/remote.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """
 Echte Multi-Institutionen-Föderierung nach §20.7.
 

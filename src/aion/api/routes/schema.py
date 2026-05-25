@@ -1,5 +1,5 @@
 # aion/api/routes/schema.py
-# Copyright © 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright © 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0
 """
 REST-Endpunkte für Schemaevolution (§18) und Typhierarchie (§3).
 """

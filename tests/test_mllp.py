@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """Tests für aion.hl7v2.mllp — MLLP-Server.
 
 Tests gegen einen laufenden Server auf 127.0.0.1 mit Random-Port.

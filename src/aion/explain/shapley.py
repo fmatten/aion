@@ -1,5 +1,5 @@
 # aion/explain/shapley.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH - EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """
 Erklärbarkeit nach §22 des AION-Papers.
 Stdlib-only.

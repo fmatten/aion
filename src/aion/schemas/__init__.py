@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """AION Clinical — Schema-Definitionen für Typ-Hierarchien.
 
 Schemas sind YAML-Dateien, die mitgeliefert werden:

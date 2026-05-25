@@ -7,6 +7,33 @@ Versionierung folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [2.0.3] — 2026-05-25
+
+### Lizenzwechsel: EUPL-1.2 → AGPL-3.0 OR Commercial (Dual-Lizenz)
+
+- Open-Source-Lizenz von EUPL-1.2 auf GNU Affero General Public License v3 (AGPL-3.0) umgestellt
+- Dual-Lizenz bleibt erhalten: `AGPL-3.0-only OR LicenseRef-Iscad-Commercial`
+- `LICENSE`-Datei ersetzt durch vollständigen AGPL-3.0-Text
+- `pyproject.toml`: `license = "AGPL-3.0-only"` + Classifier `GNU Affero General Public License v3`
+- Alle 116+ Python-Quelldateien: `SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial`
+- `FILE_HEADER_TEMPLATE.py` aktualisiert
+- README: Badge auf AGPL-3.0 + Commercial aktualisiert
+- `LICENSE-COMMERCIAL.md` und `NOTICE` bleiben unverändert
+
+---
+
+## [2.0.3] — 2026-05-25
+
+### Licence Change: EUPL-1.2 → AGPL-3.0-only OR Commercial
+
+- Replaced EUPL-1.2 with AGPL-3.0-only in Dual-Lizenz (AGPL-3.0-only OR LicenseRef-Iscad-Commercial)
+- Updated LICENSE.md and LICENSES/AGPL-3.0.txt
+- Updated pyproject.toml: license = AGPL-3.0-only
+- Updated SPDX headers in all Python source files
+- Updated README badge
+
+---
+
 ## [2.0.2] — 2026-05-25
 
 ### PyPI & Repository Metadata

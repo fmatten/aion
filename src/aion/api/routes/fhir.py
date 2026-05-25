@@ -1,5 +1,5 @@
 # aion/api/routes/fhir.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 from __future__ import annotations
 import json
 from fastapi import APIRouter, Depends, Request, UploadFile, File, HTTPException

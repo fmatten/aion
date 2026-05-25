@@ -1,5 +1,5 @@
 # aion/api/routes/federation_remote.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 """Echte Multi-Institutionen-Föderierung über HTTPS (§20.7)."""
 from __future__ import annotations
 from fastapi import APIRouter, Depends, Request, HTTPException

@@ -1,5 +1,5 @@
 # aion/persist/postgres_store.py
-# Copyright © 2026 Friedhelm Matten / ISCaD GmbH – EUPL-1.2
+# Copyright © 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0
 from __future__ import annotations
 import json, uuid, logging
 from datetime import datetime, timezone
