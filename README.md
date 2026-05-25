@@ -31,19 +31,33 @@ pip install aion-clinical[full]==2.0.1   # komplettes Produktionspaket
 
 ## Licensing
 
-AION Clinical is offered under a dual-license model:
+AION Clinical is **dual-licensed**: **AGPL-3.0-only** (open source) **OR Commercial** (ISCaD GmbH).
 
-- **Open Source:** European Union Public Licence v. 1.2 (AGPL-3.0)
-- **Commercial:** proprietary commercial licensing by **Iscad GmbH**
+### Open Source — AGPL-3.0-only
 
-You may use, modify and distribute the software under the AGPL-3.0. Alternatively, commercial licensing terms are available from Iscad GmbH for use cases such as proprietary integration, redistribution under non-EUPL terms, OEM embedding, warranty/support arrangements or other negotiated commercial conditions.
+- Free to use, modify, and distribute
+- Modifications **must be contributed back** under AGPL-3.0
+- Copyleft covers **network use (SaaS)**
+- Full text: [`LICENSES/AGPL-3.0.txt`](./LICENSES/AGPL-3.0.txt)
 
-See:
+### Commercial Licence
 
-- `LICENSE.md`
-- `LICENSES/AGPL-3.0.txt`
-- `LICENSE-COMMERCIAL.md`
-- `NOTICE`
+A commercial licence is available for:
+- Proprietary integration or redistribution
+- Deployments where AGPL-3.0 copyleft obligations are not suitable
+- OEM embedding, support & warranty arrangements
+
+Contact: **friedhelm.matten@iscad-it.de**  
+Details: [`LICENSE-COMMERCIAL.md`](./LICENSE-COMMERCIAL.md)
+
+### SPDX
+
+```text
+SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+```
+
+See also: [`LICENSE.md`](./LICENSE.md) · [`NOTICE`](./NOTICE)
 
 ## Medical and regulatory status
 
@@ -64,15 +78,15 @@ This repository may be used to maintain:
 
 ## Contribution policy
 
-External contributions are accepted only under the contribution terms in `CONTRIBUTING.md`. Contributors must confirm that their contributions may be distributed under the same dual-license model: AGPL-3.0 or commercial Iscad GmbH license.
+External contributions are accepted only under the contribution terms in `CONTRIBUTING.md`. Contributors must confirm that their contributions may be distributed under the same dual-license model: AGPL-3.0-only OR commercial ISCaD GmbH license.
 
 ## SPDX header
 
 Recommended source file header:
 
 ```text
-SPDX-FileCopyrightText: 2026 Iscad GmbH
-SPDX-License-Identifier: AGPL-3.0 OR LicenseRef-Iscad-Commercial
+SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
 ```
 
 ## Contact
