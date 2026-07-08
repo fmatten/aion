@@ -86,7 +86,7 @@ aion-gui = "aion.gui.app:main"
 "Mirror"                  = "https://codeberg.org/iscad/aion"
 "PyPI"                    = "https://pypi.org/project/aion-clinical/"
 "Changelog"               = "https://github.com/fmatten/aion/blob/master/CHANGELOG.md"
-"Theoretical Foundation"  = "https://doi.org/10.5281/zenodo.19553130"
+"Theoretical Foundation"  = "https://doi.org/10.5281/zenodo.21254124"
 "Issues"                  = "https://github.com/fmatten/aion/issues"
 
 [tool.setuptools.packages.find]
