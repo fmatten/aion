@@ -7,7 +7,7 @@ Formal temporal and causal structure for consistent clinical data across systems
 [![Version](https://img.shields.io/badge/version-2.0.1-blue.svg)](https://github.com/fmatten/aion/releases)
 [![Licence: AGPL-3.0](https://img.shields.io/badge/Licence-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0) [![Licence: Commercial](https://img.shields.io/badge/Licence-Commercial-orange.svg)](mailto:licensing@iscad-it.de)
 [![PyPI](https://img.shields.io/pypi/v/aion-clinical.svg)](https://pypi.org/project/aion-clinical/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19553130.svg)](https://doi.org/10.5281/zenodo.19553130)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21254124.svg)](https://doi.org/10.5281/zenodo.21254124)
 
 > GitHub: [fmatten/aion](https://github.com/fmatten/aion) · Codeberg: [iscad/aion](https://codeberg.org/iscad/aion) · PyPI: [aion-clinical](https://pypi.org/project/aion-clinical/)
 
@@ -27,7 +27,7 @@ pip install aion-clinical[full]==2.0.1   # komplettes Produktionspaket
 | **FM-1** | Grundlagen zur wissenschaftlichen Auswertung klinischer Informationen | [10.5281/zenodo.19205557](https://doi.org/10.5281/zenodo.19205557) |
 | **CAIRN** | FM-2: Clinical Interoperability Reference Architecture | [github.com/fmatten/CAIRN](https://github.com/fmatten/CAIRN) |
 | **SILD** | FM-4: Signal-Loss Inspection at Data-boundaries | [github.com/fmatten/SILD](https://github.com/fmatten/SILD) · [10.5281/zenodo.20375435](https://doi.org/10.5281/zenodo.20375435) |
-| **FM-3 Paper** | Formale Wissensrepräsentation klinischer Verläufe | [10.5281/zenodo.19553130](https://doi.org/10.5281/zenodo.19553130) |
+| **FM-3 Paper** | Formale Wissensrepräsentation klinischer Verläufe | [10.5281/zenodo.21255844](https://doi.org/10.5281/zenodo.21255844) |
 
 ## Licensing
 
