@@ -42,7 +42,7 @@ def to_fhir_bundle(
                         werden soll (Feld `fhir_resource` im TypeNode).
     """
     _require_fhir()
-    from fhir.resources.bundle import Bundle, BundleEntry
+    from fhir.resources.R4B.bundle import Bundle, BundleEntry
 
     entries = []
     for event in events:
@@ -115,7 +115,7 @@ def bundle_to_json(bundle: Any, *, indent: int = 2) -> str:
 def bundle_from_json(text: str) -> Any:
     """Liest ein Bundle aus einem JSON-String."""
     _require_fhir()
-    from fhir.resources.bundle import Bundle
+    from fhir.resources.R4B.bundle import Bundle
     data = json.loads(text)
     return Bundle.model_validate(data)
 

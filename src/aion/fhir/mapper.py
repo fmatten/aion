@@ -132,8 +132,8 @@ def from_fhir(resource: Any) -> ClinicalEvent:
 # ────────────────────────────────────────────────────────────────────
 def _build_code(event_type: str):
     """CodeableConcept mit AION-System-URL."""
-    from fhir.resources.codeableconcept import CodeableConcept
-    from fhir.resources.coding import Coding
+    from fhir.resources.R4B.codeableconcept import CodeableConcept
+    from fhir.resources.R4B.coding import Coding
     return CodeableConcept(coding=[
         Coding(system=AION_SYSTEM_URL, code=event_type, display=event_type),
     ])
@@ -141,18 +141,18 @@ def _build_code(event_type: str):
 
 def _build_subject(patient_id: str):
     """Reference auf Patient/{id}."""
-    from fhir.resources.reference import Reference
+    from fhir.resources.R4B.reference import Reference
     return Reference(reference=f"Patient/{patient_id}")
 
 
 def _build_period(start: datetime, end: datetime):
-    from fhir.resources.period import Period
+    from fhir.resources.R4B.period import Period
     return Period(start=_to_fhir_datetime(start), end=_to_fhir_datetime(end))
 
 
 def _stay_extension(event: ClinicalEvent):
     """Extension mit dem Aufenthalts-Zeitraum."""
-    from fhir.resources.extension import Extension
+    from fhir.resources.R4B.extension import Extension
     return Extension(
         url=AION_STAY_URL,
         valuePeriod=_build_period(event.stay_start, event.stay_end),
@@ -163,19 +163,19 @@ def _confidence_extension(event: ClinicalEvent) -> Optional[Any]:
     """Extension mit Konfidenz, nur falls != 1.0."""
     if event.confidence == 1.0:
         return None
-    from fhir.resources.extension import Extension
+    from fhir.resources.R4B.extension import Extension
     return Extension(url=AION_CONFIDENCE_URL, valueDecimal=event.confidence)
 
 
 def _relation_extension(relation: str):
     """Extension, die einer FHIR-Reference die AION-Relation anhängt."""
-    from fhir.resources.extension import Extension
+    from fhir.resources.R4B.extension import Extension
     return Extension(url=AION_RELATION_URL, valueString=relation)
 
 
 def _build_reference_with_relation(target_id: str, relation: str):
     """Erzeugt eine FHIR-Reference auf einen anderen Event mit Relation-Extension."""
-    from fhir.resources.reference import Reference
+    from fhir.resources.R4B.reference import Reference
     return Reference(
         reference=f"Observation/{target_id}",  # generisch, beim Parsen lesen wir nur die ID
         extension=[_relation_extension(relation)],
@@ -195,7 +195,7 @@ def _build_attribute_extensions(attributes: dict) -> list:
     """Wandelt Restattribute, die nicht in native Felder gemappt wurden,
     in eine flache Liste von Extensions um.
     """
-    from fhir.resources.extension import Extension
+    from fhir.resources.R4B.extension import Extension
     out = []
     for key, value in attributes.items():
         ext = Extension(url=f"{AION_ATTRIBUTE_URL}#{key}")
@@ -296,7 +296,7 @@ def _extract_references_from(field_value, default_relation: str) -> dict[str, st
 # Observation
 # ────────────────────────────────────────────────────────────────────
 def _to_observation(event: ClinicalEvent):
-    from fhir.resources.observation import Observation
+    from fhir.resources.R4B.observation import Observation
 
     obs = Observation(
         id=event.event_id,
@@ -311,7 +311,7 @@ def _to_observation(event: ClinicalEvent):
     # alles andere als Component oder Extension.
     remaining = dict(event.attributes)
     if "value" in remaining and isinstance(remaining["value"], (int, float)):
-        from fhir.resources.quantity import Quantity
+        from fhir.resources.R4B.quantity import Quantity
         unit = remaining.pop("unit", None)
         q = Quantity(value=float(remaining.pop("value")))
         if unit:
@@ -325,8 +325,8 @@ def _to_observation(event: ClinicalEvent):
     leftover: dict = {}
     for key, val in remaining.items():
         if isinstance(val, (int, float)) and not isinstance(val, bool):
-            from fhir.resources.observation import ObservationComponent
-            from fhir.resources.quantity import Quantity
+            from fhir.resources.R4B.observation import ObservationComponent
+            from fhir.resources.R4B.quantity import Quantity
             comp = ObservationComponent(
                 code=_build_code(key),
                 valueQuantity=Quantity(value=float(val)),
@@ -395,9 +395,9 @@ def _from_observation(obs) -> ClinicalEvent:
 # Condition
 # ────────────────────────────────────────────────────────────────────
 def _to_condition(event: ClinicalEvent):
-    from fhir.resources.condition import Condition
-    from fhir.resources.codeableconcept import CodeableConcept
-    from fhir.resources.coding import Coding
+    from fhir.resources.R4B.condition import Condition
+    from fhir.resources.R4B.codeableconcept import CodeableConcept
+    from fhir.resources.R4B.coding import Coding
 
     cond = Condition(
         id=event.event_id,
@@ -414,8 +414,8 @@ def _to_condition(event: ClinicalEvent):
     # 'severity' als FHIR-natives Feld
     remaining = dict(event.attributes)
     if "severity" in remaining and remaining["severity"]:
-        from fhir.resources.codeableconcept import CodeableConcept
-        from fhir.resources.coding import Coding
+        from fhir.resources.R4B.codeableconcept import CodeableConcept
+        from fhir.resources.R4B.coding import Coding
         cond.severity = CodeableConcept(coding=[Coding(
             system=AION_SYSTEM_URL, code=str(remaining.pop("severity")),
         )])
@@ -424,15 +424,13 @@ def _to_condition(event: ClinicalEvent):
         cond.extension = (cond.extension or []) + _build_attribute_extensions(remaining)
 
     if event.references:
-        # Condition kennt evidence + reasonReference, hier nutzen wir evidence
-        from fhir.resources.codeablereference import CodeableReference
+        # R4B: Condition.evidence ist eine Liste von ConditionEvidence mit detail=[Reference]
+        from fhir.resources.R4B.condition import ConditionEvidence
         evidence_refs = []
         for ref_id, rel in event.references.items():
-            cr = CodeableReference(
-                reference=_build_reference_with_relation(ref_id, rel),
-            )
-            evidence_refs.append(cr)
-        # In R5 ist Condition.evidence eine Liste von CodeableReference
+            evidence_refs.append(ConditionEvidence(
+                detail=[_build_reference_with_relation(ref_id, rel)],
+            ))
         try:
             cond.evidence = evidence_refs
         except Exception:
@@ -459,11 +457,12 @@ def _from_condition(cond) -> ClinicalEvent:
 
     references: dict[str, str] = {}
     for ev in (cond.evidence or []):
-        if ev.reference and ev.reference.reference:
-            target = ev.reference.reference
+        detail = ev.detail[0] if ev.detail else None
+        if detail and detail.reference:
+            target = detail.reference
             target_id = target.split("/", 1)[1] if "/" in target else target
             rel = EventRelation.CONFIRMS
-            for ext in (ev.reference.extension or []):
+            for ext in (detail.extension or []):
                 if ext.url == AION_RELATION_URL and ext.valueString:
                     rel = ext.valueString
                     break
@@ -487,13 +486,12 @@ def _from_condition(cond) -> ClinicalEvent:
 # MedicationAdministration
 # ────────────────────────────────────────────────────────────────────
 def _to_medication(event: ClinicalEvent):
-    from fhir.resources.medicationadministration import (
+    from fhir.resources.R4B.medicationadministration import (
         MedicationAdministration, MedicationAdministrationDosage,
     )
-    from fhir.resources.codeablereference import CodeableReference
-    from fhir.resources.codeableconcept import CodeableConcept
-    from fhir.resources.coding import Coding
-    from fhir.resources.quantity import Quantity
+    from fhir.resources.R4B.codeableconcept import CodeableConcept
+    from fhir.resources.R4B.coding import Coding
+    from fhir.resources.R4B.quantity import Quantity
 
     remaining = dict(event.attributes)
 
@@ -505,16 +503,14 @@ def _to_medication(event: ClinicalEvent):
         medication_codings.append(Coding(system=ATC_URL,
                                          code=str(remaining.pop("atc_code"))))
 
-    medication = CodeableReference(
-        concept=CodeableConcept(coding=medication_codings),
-    )
+    medication = CodeableConcept(coding=medication_codings)
 
     med = MedicationAdministration(
         id=event.event_id,
         status="completed",
-        medication=medication,
+        medicationCodeableConcept=medication,
         subject=_build_subject(event.patient_id),
-        occurencePeriod=_build_period(event.t_start, event.t_end),
+        effectivePeriod=_build_period(event.t_start, event.t_end),
         extension=_build_extensions(event),
     )
 
@@ -539,26 +535,24 @@ def _to_medication(event: ClinicalEvent):
         med.extension = (med.extension or []) + _build_attribute_extensions(remaining)
 
     if event.references:
-        # MedicationAdministration kennt reason (CodeableReference) — passt für response_to
-        from fhir.resources.codeablereference import CodeableReference as CR
-        med.reason = []
+        # R4B: MedicationAdministration.reasonReference ist eine Liste von Reference
+        med.reasonReference = []
         for ref_id, rel in event.references.items():
-            cr = CR(reference=_build_reference_with_relation(ref_id, rel))
-            med.reason.append(cr)
+            med.reasonReference.append(_build_reference_with_relation(ref_id, rel))
 
     return med
 
 
 def _from_medication(med) -> ClinicalEvent:
-    period = med.occurencePeriod
+    period = med.effectivePeriod
     t_start = _from_fhir_datetime(period.start) if period and period.start else None
     t_end = _from_fhir_datetime(period.end) if period and period.end else t_start
     stay_start, stay_end = _extract_stay_period(med)
 
     attrs: dict = {}
     # Medication-Konzept zurückbauen
-    if med.medication and med.medication.concept:
-        for c in (med.medication.concept.coding or []):
+    if med.medicationCodeableConcept:
+        for c in (med.medicationCodeableConcept.coding or []):
             from aion.fhir.codes import ATC_URL
             if c.system == ATC_URL and c.code:
                 attrs["atc_code"] = c.code
@@ -579,12 +573,12 @@ def _from_medication(med) -> ClinicalEvent:
     attrs.update(_extract_attribute_extensions(med))
 
     references: dict[str, str] = {}
-    for r in (med.reason or []):
-        if r.reference and r.reference.reference:
-            target = r.reference.reference
+    for r in (med.reasonReference or []):
+        if r.reference:
+            target = r.reference
             target_id = target.split("/", 1)[1] if "/" in target else target
             rel = EventRelation.RESPONSE_TO
-            for ext in (r.reference.extension or []):
+            for ext in (r.extension or []):
                 if ext.url == AION_RELATION_URL and ext.valueString:
                     rel = ext.valueString
                     break
@@ -605,9 +599,9 @@ def _from_medication(med) -> ClinicalEvent:
 
 
 def _extract_event_type_from_medication(med) -> str:
-    """MedicationAdministration hat keinen .code, sondern medication.concept.coding."""
-    if med.medication and med.medication.concept:
-        for c in (med.medication.concept.coding or []):
+    """MedicationAdministration hat keinen .code, sondern medicationCodeableConcept.coding."""
+    if med.medicationCodeableConcept:
+        for c in (med.medicationCodeableConcept.coding or []):
             if c.system == AION_SYSTEM_URL:
                 return c.code
     return "MedicationAdministration"
@@ -617,14 +611,14 @@ def _extract_event_type_from_medication(med) -> str:
 # Procedure
 # ────────────────────────────────────────────────────────────────────
 def _to_procedure(event: ClinicalEvent):
-    from fhir.resources.procedure import Procedure
+    from fhir.resources.R4B.procedure import Procedure
 
     proc = Procedure(
         id=event.event_id,
         status="completed",
         code=_build_code(event.event_type),
         subject=_build_subject(event.patient_id),
-        occurrencePeriod=_build_period(event.t_start, event.t_end),
+        performedPeriod=_build_period(event.t_start, event.t_end),
         extension=_build_extensions(event),
     )
 
@@ -632,17 +626,16 @@ def _to_procedure(event: ClinicalEvent):
         proc.extension = (proc.extension or []) + _build_attribute_extensions(event.attributes)
 
     if event.references:
-        from fhir.resources.codeablereference import CodeableReference
-        proc.reason = []
+        # R4B: Procedure.reasonReference ist eine Liste von Reference (kein CodeableReference)
+        proc.reasonReference = []
         for ref_id, rel in event.references.items():
-            cr = CodeableReference(reference=_build_reference_with_relation(ref_id, rel))
-            proc.reason.append(cr)
+            proc.reasonReference.append(_build_reference_with_relation(ref_id, rel))
 
     return proc
 
 
 def _from_procedure(proc) -> ClinicalEvent:
-    period = proc.occurrencePeriod
+    period = proc.performedPeriod
     t_start = _from_fhir_datetime(period.start) if period and period.start else None
     t_end = _from_fhir_datetime(period.end) if period and period.end else t_start
     stay_start, stay_end = _extract_stay_period(proc)
@@ -650,12 +643,12 @@ def _from_procedure(proc) -> ClinicalEvent:
     attrs = _extract_attribute_extensions(proc)
 
     references: dict[str, str] = {}
-    for r in (proc.reason or []):
-        if r.reference and r.reference.reference:
-            target = r.reference.reference
+    for r in (proc.reasonReference or []):
+        if r.reference:
+            target = r.reference
             target_id = target.split("/", 1)[1] if "/" in target else target
             rel = EventRelation.RESPONSE_TO
-            for ext in (r.reference.extension or []):
+            for ext in (r.extension or []):
                 if ext.url == AION_RELATION_URL and ext.valueString:
                     rel = ext.valueString
                     break

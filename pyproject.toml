@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aion-clinical"
-version = "1.10.3"
+version = "1.10.4"
 description = "Formal temporal and causal structure for consistent clinical data across systems (HL7 v2, FHIR, MLLP). EUPL-1.2 / commercial dual license."
 readme = "README.md"
 license = { text = "EUPL-1.2" }
