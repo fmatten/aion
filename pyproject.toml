@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aion-clinical"
-version = "2.0.4"
+version = "2.0.5"
 description = "FM-3 formal knowledge representation for clinical trajectories — Allen algebra, causal inference, Shapley attribution, HL7 v2, FHIR R4, differential privacy. AGPL-3.0 / commercial dual license."
 readme = "README.md"
 license = "AGPL-3.0-only"
