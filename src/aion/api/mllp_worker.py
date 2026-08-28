@@ -1,5 +1,5 @@
 # aion/api/mllp_worker.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """
 MLLP-Listener für HL7v2 – v1.1.0-B (klinisch korrekt).
 

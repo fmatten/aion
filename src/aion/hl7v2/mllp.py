@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """MLLP-Listener für HL7-v2 (1.9.0).
 
 MLLP = Minimum Lower Layer Protocol — der Standard-Transport für HL7-v2

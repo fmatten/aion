@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """FHIR-Bundle-Operationen für AION ClinicalEvents.
 
 Ein Bundle ist ein Container für mehrere FHIR-Resourcen — typisch

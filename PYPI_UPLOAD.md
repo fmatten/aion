@@ -93,7 +93,7 @@ Browser öffnen:
 
 1. ✓ Version `1.10.1` ist sichtbar
 2. ✓ Description (englisch) erscheint korrekt
-3. ✓ License-Badge zeigt `EUPL-1.2`
+3. ✓ License-Badge zeigt `AGPL-3.0-only`
 4. ✓ Maintainer wird angezeigt
 5. ✓ Files-Tab zeigt sdist + wheel
 6. ✓ Dependencies/Extras sichtbar
@@ -148,7 +148,7 @@ Browser:
 
 1. ✓ Version `1.10.1` ist die "Latest"
 2. ✓ Vorherige `1.0.6` ist unter "Release History" weiterhin sichtbar
-3. ✓ License-Badge `EUPL-1.2`
+3. ✓ License-Badge `AGPL-3.0-only`
 4. ✓ Description erscheint vollständig
 5. ✓ `pip install aion-clinical` (ohne Version) zieht 1.10.1
 

@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """ClinicalEvent — Ereignismodell e = (p, a, τ, α, ρ) gemäß AION_v1.0 (erweitert).
 
 Mathematisches Modell:

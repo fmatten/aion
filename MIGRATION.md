@@ -185,7 +185,7 @@ CLI: `aion auth keygen --name mirth-1 --roles ingest --expires 2027-12-31`
 
 ## What didn't change
 
-- `EUPL-1.2 / commercial dual-license` model
+- `AGPL-3.0-only / commercial dual-license` model
 - `Friedhelm Matten / ISCaD GmbH` as copyright holder
 - Python 3.10+ as minimum
 - `aion-clinical` as the PyPI package name

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 #
 # AION — Algebraic Interval Ontology for Clinical Networks
 # Copyright © Friedhelm Matten, ISCaD GmbH, 30900 Wedemark, Germany

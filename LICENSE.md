@@ -28,5 +28,5 @@ Unless a separate written commercial license agreement has been concluded with I
 For source files, use:
 
 ```text
-SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 ```

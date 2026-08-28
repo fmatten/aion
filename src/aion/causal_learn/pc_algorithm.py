@@ -1,5 +1,5 @@
 # aion/causal_learn/pc_algorithm.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """
 PC-Algorithmus und GES nach §15 des AION-Papers.
 Stdlib-only: kein DoWhy, kein NetworkX.

@@ -13,7 +13,7 @@ identifiers:
     description: "Theoretical foundation FM-3"
 repository-code: "https://codeberg.org/iscad/aion"
 url: "https://pypi.org/project/aion-clinical/"
-license: EUPL-1.2
+license: AGPL-3.0-only
 version: 2.0.1
 date-released: "2026-05-12"
 keywords:

@@ -1488,7 +1488,7 @@ Hersteller-Verantwortung.
 
 ### AION Clinical selbst
 
-**Lizenz:** Dual-License — EUPL-1.2 (Open Source) + Kommerzielle Lizenz
+**Lizenz:** Dual-License — AGPL-3.0-only (Open Source) + Kommerzielle Lizenz
 
 Copyright © 2026 Friedhelm Matten / ISCaD GmbH, 30900 Wedemark, Germany.
 Kontakt für kommerzielle Lizenz: licensing@iscad-it.de
@@ -1497,11 +1497,10 @@ Source-Dateien tragen SPDX-Header gemäß REUSE-Standard:
 
 ```
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 ```
 
-Vollständiger EUPL-1.2-Text in `LICENSE` (Kurzfassung) und
-`LICENSES/EUPL-1.2.txt` (englische SPDX-Standardfassung). Hinweise zu
+Vollständiger AGPL-3.0-Text in `LICENSE`. Hinweise zu
 Drittkomponenten und Trademark in `NOTICE`.
 
 ### Drittkomponenten (zur Laufzeit)
