@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """Z3-basierte SMT-Verifikation für Schema-Constraints — OPTIONAL.
 
 Lädt nur, wenn `z3-solver` installiert ist:

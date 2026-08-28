@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """Tests für SQLite-Schema-Migration.
 
 1.0.0-Anforderung: Datenbanken, die mit älteren AION-Versionen erstellt

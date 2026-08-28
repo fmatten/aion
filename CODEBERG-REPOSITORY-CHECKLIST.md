@@ -6,7 +6,7 @@ Use this checklist before publishing or updating the AION Clinical repository on
 
 - [ ] `README.md`
 - [ ] `LICENSE.md`
-- [ ] `LICENSES/EUPL-1.2.txt` with the official EUPL-1.2 text inserted verbatim
+- [ ] `LICENSE` with the official AGPL-3.0 text inserted verbatim
 - [ ] `LICENSE-COMMERCIAL.md`
 - [ ] `NOTICE`
 - [ ] `CONTRIBUTING.md`
@@ -20,7 +20,7 @@ Use this checklist before publishing or updating the AION Clinical repository on
 - [ ] Default branch is protected if required
 - [ ] Issues enabled if Codeberg is intended as issue tracker
 - [ ] Pull requests enabled only if contribution workflow is ready
-- [ ] README clearly states EUPL-1.2 / commercial dual licensing
+- [ ] README clearly states AGPL-3.0-only / commercial dual licensing
 - [ ] Medical/MDR disclaimer is visible
 - [ ] Commercial contact is correct
 

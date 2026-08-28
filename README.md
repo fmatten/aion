@@ -54,7 +54,7 @@ Details: [`LICENSE-COMMERCIAL.md`](./LICENSE-COMMERCIAL.md)
 
 ```text
 SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 ```
 
 See also: [`LICENSE.md`](./LICENSE.md) · [`NOTICE`](./NOTICE)
@@ -86,7 +86,7 @@ Recommended source file header:
 
 ```text
 SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 ```
 
 ## Contact

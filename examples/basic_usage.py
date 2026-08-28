@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """Basic Usage — Typ-Hierarchie via Builder, Decorator und YAML."""
 from dataclasses import dataclass
 from datetime import datetime

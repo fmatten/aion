@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """SQLite-Demo — Patiententimeline mit ClinicalEvents persistieren und abfragen."""
 from datetime import datetime, timedelta
 from aion import ClinicalEvent, SQLiteEventStore

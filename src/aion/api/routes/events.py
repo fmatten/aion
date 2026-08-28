@@ -1,5 +1,5 @@
 # aion/api/routes/events.py
-# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 from __future__ import annotations
 from datetime import datetime, timedelta
 from typing import Any

@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
-# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Iscad-Commercial
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """Tests für aion.fhir — Round-Trip-Mapper und Bundle-Operations."""
 import unittest
 from datetime import datetime, timezone, timedelta
