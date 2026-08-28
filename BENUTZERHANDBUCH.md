@@ -1522,17 +1522,6 @@ LGPL ist für kommerzielle Weitergabe **unbedenklich**, solange die
 LGPL-Komponente dynamisch gelinkt bleibt — was beim normalen
 `pip install`-Setup automatisch der Fall ist.
 
-### EUPL-Kompatibilität
-
-EUPL-1.2 ist mit folgenden Lizenzen explizit kompatibel (Anhang der
-Lizenz): GPL v2/v3, AGPLv3, LGPL v2.1/v3, MPL v2, EPL v1, OSL,
-CeCILL, CC-BY-SA 3.0 (für Doku) und EUPL v1.1.
-
-Praktisch heißt das: AION-Code darf mit Bibliotheken aus diesen
-Lizenz-Familien kombiniert werden, ohne Lizenz-Konflikt. MIT- und
-BSD-Bibliotheken sind ohnehin uneingeschränkt nutzbar
-(permissive Lizenzen).
-
 ## Anhang B: Versionsstand & Test-Status
 
 - **Version: 1.10.1 (April 2026)
