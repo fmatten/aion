@@ -98,16 +98,12 @@ contact: `info@iscad-it.de`
 
 ---
 
-## Klonen von außerhalb mobdev
+## Klonen
 
-**Echte Klon-URL:** `git@github.com:fmatten/aion.git`
+**Klon-URL:** `git@github.com:fmatten/aion.git`
 
-Der auf der Arbeitsmaschine *mobdev* eingetragene `origin` lautet `aion-repo-github:fmatten/aion.git` und ist ein
-**SSH-Alias aus der dortigen `~/.ssh/config`**, keine auflösbare Adresse. Auf einem frischen
-Rechner existiert dieser Alias nicht; ein `git clone` über die Aliasform scheitert dort an der
-**Namensauflösung** — nicht an fehlender Berechtigung, was die Fehlersuche in die falsche
-Richtung schickt. Von jeder anderen Maschine aus deshalb immer die echte URL oben verwenden.
-
-*Ergänzt 04.09.2026 (Aufbau-Plan `content/aufbau-plan-sild-aion-2026-09.md` §2.1, Lücke L-1).
-Die echte URL wurde am selben Tag per `git ls-remote` gegen GitHub geprüft; der lokale
-`origin` bleibt als mobdev-Bequemlichkeit unverändert.*
+Falls in einer vorhandenen Arbeitskopie ein abweichender `origin` eingetragen ist, kann dort ein
+SSH-Alias aus einer maschinenlokalen `~/.ssh/config` stehen. Solche Aliasse lösen auf anderen
+Rechnern nicht auf; ein `git clone` über die Aliasform scheitert dann an der **Namensauflösung**,
+nicht an fehlender Berechtigung — was die Fehlersuche in die falsche Richtung schickt. Zum Klonen
+deshalb immer die URL oben verwenden.
