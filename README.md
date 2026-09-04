@@ -1,5 +1,21 @@
 # AION Clinical
 
+> ## Rolle dieses Repos
+>
+> **Dies ist das veröffentlichte PyPI-Paket `aion-clinical`.** Der Paketname in
+> `pyproject.toml` ist bewusst so und bleibt es — dieses Repo führt die
+> Versionsgeschichte (Tags `v1.10.1` … `v2.0.5-quelle`).
+>
+> * **Messbaum:** Repo **`aion-clinical`** — dort liegt der Messcode (u. a.
+>   `DocumentReference`), und alle Messwerkzeuge des Bestands nennen dessen Pfad.
+> * **Schnappschussbaum:** Repo **`aion-full`** (Paketname seit 04.09.2026
+>   `aion-full-snapshot`, PyPI-Release-Job stillgelegt).
+>
+> Drei Repos trugen bis zum 04.09.2026 denselben Paketnamen. Grundlage der Trennung:
+> FM-Entscheide ①–④ zur Tafel `content/aion-verwechslungsflaeche-vorlage-2026-09.md`
+> im Neuanfang-Bestand.
+
+
 **Algebraic Interval Ontology for Clinical Networks — FM-3 Referenzimplementierung**
 
 Formal temporal and causal structure for consistent clinical data across systems, including HL7 v2, FHIR and MLLP contexts.
