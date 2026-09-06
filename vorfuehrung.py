@@ -213,9 +213,10 @@ def akt_1b_fhir(store: SQLiteEventStore) -> None:
     pause()
 
     slow_print(
-        f"\n{BOLD}Bedeutung:{RESET} AION ist HL7-kompatibel anschlussfähig.\n"
-        f"Real-Daten aus Synthea, MIMIC-IV-FHIR, oder direkten Klinik-\n"
-        f"Schnittstellen können ohne Konvertierungs-Pipeline geladen werden."
+        f"\n{BOLD}Bedeutung:{RESET} AION liest FHIR-Bündel direkt ein.\n"
+        f"Die frei verfügbare MIMIC-IV-on-FHIR-Demo (PhysioNet, ODbL) und\n"
+        f"Synthea-Daten werden ohne vorgeschaltete Konvertierung geladen;\n"
+        f"die Ableitung klinischer Ereignisse daraus ist in Arbeit."
     )
 
     pause()

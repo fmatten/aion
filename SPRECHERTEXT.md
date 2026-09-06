@@ -95,9 +95,11 @@ Enter — Akt 1½ läuft.
 
 Enter — Bundle wird gebaut, Round-Trip läuft.
 
-> Praktisch heißt das: AION kann Synthea-Datensätze, MIMIC-IV-FHIR-
-> Exporte oder direkte Klinik-Schnittstellen ohne Konvertierungs-Pipeline
-> einlesen. Und ebenso: Resultate als FHIR exportieren, etwa für Studien
+> Praktisch heißt das: AION liest FHIR-Bündel direkt ein — die frei
+> verfügbare MIMIC-IV-on-FHIR-Demo (PhysioNet, ODbL) ebenso wie
+> Synthea-Datensätze, ohne vorgeschaltete Konvertierung. Die Ableitung
+> klinischer Ereignisse daraus ist in Arbeit; der Stand steht im
+> Messblatt. Und ebenso: Resultate als FHIR exportieren, etwa für Studien
 > oder externe Analyse-Tools.
 
 > Note: ein Stilhinweis. Wenn jemand fragt warum nicht direkt
