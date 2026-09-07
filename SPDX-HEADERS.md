@@ -6,21 +6,21 @@ Use the following header in source files where practical.
 
 ```python
 # SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
-# Copyright (c) Iscad GmbH and contributors
+# Copyright (c) ISCaD GmbH and contributors
 ```
 
 ## Markdown / text
 
 ```text
 SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
-Copyright (c) Iscad GmbH and contributors
+Copyright (c) ISCaD GmbH and contributors
 ```
 
 ## TOML
 
 ```toml
 # SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
-# Copyright (c) Iscad GmbH and contributors
+# Copyright (c) ISCaD GmbH and contributors
 ```
 
 ## Important note

@@ -19,7 +19,7 @@ authors = [
     { name = "Friedhelm Matten", email = "friedhelm.matten@iscad-it.de" },
 ]
 maintainers = [
-    { name = "Iscad GmbH", email = "friedhelm.matten@iscad-it.de" },
+    { name = "ISCaD GmbH", email = "friedhelm.matten@iscad-it.de" },
 ]
 keywords = [
     "clinical data",
