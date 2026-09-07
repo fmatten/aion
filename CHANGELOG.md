@@ -7,6 +7,19 @@ Versionierung folgt [Semantic Versioning](https://semver.org/lang/de/).
 
 ---
 
+## [2.0.6] — 2026-09-07
+
+### Lizenzmetadaten — keine Codeänderung (license metadata only, no code change)
+
+- `LICENSE-COMMERCIAL.md`: EUPL-1.2 durch AGPL-3.0-only ersetzt (vier Stellen), Firmenschreibweise `Iscad GmbH` → `ISCaD GmbH`, SPDX-Zeile `AGPL-3.0-only OR LicenseRef-ISCaD-Commercial` ergänzt
+- `CLA.md`: Beitragslizenz von EUPL-1.2 auf AGPL-3.0-only gezogen (drei Stellen); die Datei wird per `MANIFEST.in` ins sdist ausgeliefert
+- `LICENSES/EUPL-1.2.txt` entfernt und Abschnitt „EUPL-Kompatibilität" aus `BENUTZERHANDBUCH.md` gestrichen — beide beschrieben eine seit 2.0.3 nicht mehr geltende Lizenz
+- SPDX-Kopfzeilen auf die einheitliche Schreibweise `AGPL-3.0-only OR LicenseRef-ISCaD-Commercial` gezogen (vorher teils `LicenseRef-Iscad-Commercial`)
+- Anlass: die veröffentlichte Fassung 2.0.5 lieferte eine Kommerzlizenz-Notiz aus, die EUPL-1.2 als geltende Lizenz nannte, während das Projekt seit 2.0.3 unter AGPL-3.0-only steht
+- Die EUPL-Nennungen in diesem CHANGELOG und in `RELEASE-NOTES-2.0.2.md` bleiben stehen: sie sind Zeitdokumente und beschreiben den damaligen Stand
+
+---
+
 ## [2.0.3] — 2026-05-25
 
 ### Lizenzwechsel: EUPL-1.2 → AGPL-3.0 OR Commercial (Dual-Lizenz)
