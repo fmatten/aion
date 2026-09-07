@@ -16,10 +16,10 @@ AION Clinical
 
 ## Grant
 
-The contributor grants Iscad GmbH and the project maintainers a worldwide, royalty-free, non-exclusive, perpetual and irrevocable license to use, reproduce, modify, prepare derivative works of, publicly display, publicly perform, sublicense and distribute the contribution as part of AION Clinical under:
+The contributor grants ISCaD GmbH and the project maintainers a worldwide, royalty-free, non-exclusive, perpetual and irrevocable license to use, reproduce, modify, prepare derivative works of, publicly display, publicly perform, sublicense and distribute the contribution as part of AION Clinical under:
 
-- the European Union Public Licence v. 1.2 (`EUPL-1.2`); and/or
-- a separate commercial license offered by Iscad GmbH.
+- the GNU Affero General Public License v3.0 only (`AGPL-3.0-only`); and/or
+- a separate commercial license offered by ISCaD GmbH.
 
 ## Representations
 
