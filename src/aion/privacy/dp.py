@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 # aion/privacy/dp.py - Differential Privacy §20 AION-Paper
 # Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 from __future__ import annotations

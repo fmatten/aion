@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 # aion/api/routes/causal_learn.py
 # Copyright 2026 Friedhelm Matten / ISCaD GmbH - AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 from fastapi import APIRouter, Depends, HTTPException, Request

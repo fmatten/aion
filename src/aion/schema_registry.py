@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """VersionedSchemaRegistry §18.1/18.5 – aion.schema_registry"""
 from __future__ import annotations
 import json, logging

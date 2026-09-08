@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2026 Friedhelm Matten / ISCaD GmbH
+# SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 # aion/api/routes/federation_remote.py
 # Copyright 2026 Friedhelm Matten / ISCaD GmbH – AGPL-3.0-only OR LicenseRef-ISCaD-Commercial
 """Echte Multi-Institutionen-Föderierung über HTTPS (§20.7)."""
